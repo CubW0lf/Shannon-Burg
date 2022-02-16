@@ -17,19 +17,19 @@ const Home = () => {
                         <Typewriter
                             options={{
                                 strings: [
-                                    "WEB DESIGNER ",
-                                    "GRAPHIC DESIGNER ",
-                                    "ILLUSTRATRICE ",
+                                    // "WEB DESIGNER ",
+                                    // "GRAPHIC DESIGNER ",
+                                    // "ILLUSTRATRICE ",
+                                    // "MAGICIENNE :) ",
                                     "RETOUCHEUSE PHOTO ",
-                                    "MAGICIENNE :) ",
                                 ],
                                 autoStart: true,
                                 loop: true,
                             }}
                         />
                     </h2>
-                    <q>Fais de ta vie un rêve, et d'un rêve une réalité</q>
-                    <cite>Antoine de Saint Exupéry</cite>
+                    <q className="not-mobile">Fais de ta vie un rêve, et d'un rêve une réalité</q>
+                    <cite className="not-mobile">Antoine de Saint Exupéry</cite>
                 </div>
                 <div className="shannon"></div>
                 <a href="/#portfolio">

@@ -1,4 +1,4 @@
-import { BsFacebook, BsLinkedin, BsPinterest, BsInstagram } from "react-icons/bs";
+import { BsFacebook, BsLinkedin, BsInstagram } from "react-icons/bs";
 import "./Socials.css";
 
 const Socials = () => {
@@ -9,9 +9,6 @@ const Socials = () => {
             </li>
             <li>
                 <BsLinkedin />
-            </li>
-            <li>
-                <BsPinterest />
             </li>
             <li>
                 <BsInstagram />

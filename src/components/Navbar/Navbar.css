@@ -6,9 +6,10 @@
     color: var(--white);
     width: 100%;
     position: fixed;
-    z-index: 4;
-    background: rgba(66, 55, 58, 0.5);
+    z-index: 6;
+    background: var(--author);
     height: 10vh;
+    filter: drop-shadow(0 0 2px black);
 }
 
 .burger {
@@ -19,6 +20,7 @@
     justify-content: space-around;
     align-items: center;
     position: relative;
+    z-index: 6;
 }
 
 .burger.cross div {
@@ -28,18 +30,20 @@
 .burger.cross .line1 {
     top: 50%;
     transform: translateY(-50%) rotate(45deg);
-    transition: top 0.4s ease-in-out, bottom 0.4s ease-in-out, transform 0.4s 0.4s ease-in-out;
+    transition: top 0.4s ease-in-out, bottom 0.4s ease-in-out, transform 0.4s 0.4s ease-in-out,
+        background-color 0.4s ease-in-out, width 0.4s ease-in-out;
 }
 
 .burger.cross .line2 {
     width: 0;
-    transition: width 1s ease-in-out, color 1s ease-in-out;
+    transition: width 1s ease-in-out, color 1s ease-in-out, color 0.4s ease-in-out, width 0.4s ease-in-out;
 }
 
 .burger.cross .line3 {
     bottom: 50%;
     transform: translateY(50%) rotate(-45deg);
-    transition: top 0.4s ease-in-out, bottom 0.4s ease-in-out, transform 0.4s 0.4s ease-in-out;
+    transition: top 0.4s ease-in-out, bottom 0.4s ease-in-out, transform 0.4s 0.4s ease-in-out,
+        background-color 0.4s ease-in-out, width 0.4s ease-in-out;
 }
 
 .burger .line1,
@@ -50,7 +54,9 @@
     border-radius: 5px;
     background-color: var(--white);
     position: absolute;
-    transition: transform 0.4s ease-in-out, top 0.4s 0.4s ease-in-out, bottom 0.4s 0.4s ease-in-out;
+    transform: translateY(0) rotate(0);
+    transition: transform 0.4s ease-in-out, top 0.4s 0.4s ease-in-out, bottom 0.4s 0.4s ease-in-out,
+        background-color 0.4s ease-in-out, width 0.4s 0.4s ease-in-out;
 }
 
 .burger .line1 {
@@ -61,10 +67,60 @@
     bottom: 10%;
 }
 
+.menu {
+    position: fixed;
+    z-index: 5;
+    top: -100%;
+    width: 100%;
+    background: rgb(27, 24, 32, 0.98);
+    transition: all 1s;
+}
+
+.menu.active {
+    top: 10vh;
+    transition: all 1s;
+}
+
+.menu ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu ul a {
+    width: 100vw;
+}
+
+.menu ul a li {
+    width: 100%;
+    font-size: 1.8rem;
+    height: 10vh;
+    color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.menu ul a:nth-child(odd) {
+    background-color: rgba(70, 63, 85, 0.5);
+}
+
 @media screen and (min-width: 1200px) {
+    .Navbar {
+        filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+    }
+
+    .menu.active {
+        display: none;
+    }
+
     .Navbar {
         flex-direction: row;
         height: 5vh;
+        background: rgba(66, 55, 58, 0.5);
     }
 
     .Navbar ul {

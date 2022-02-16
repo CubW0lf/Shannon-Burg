@@ -1,5 +1,5 @@
 import Shannon from "../../assets/images/shannon-about.png";
-import Socials from "../../components/Socials/Socials";
+import Title from "../../components/Title/Title";
 import "./About.css";
 
 const About = () => {
@@ -9,13 +9,16 @@ const About = () => {
                 <img src={Shannon} className="shannon-image" alt="moi" />
             </div>
             <div className="text">
-                <div className="up">
-                    <h2>
-                        Hello, <br /> I'm Shannon
-                    </h2>
-                    <Socials />
-                </div>
-                <hr />
+                <Title
+                    text={
+                        <h2>
+                            Hello
+                            <br />
+                            I'm Shannon
+                        </h2>
+                    }
+                    social={true}
+                />
                 <p>
                     Et oui, moi c'est Shannon (non sérieusement ?). Passionnée depuis toujours par le domaine du dessin, de
                     l'illustration jeunesse et amoureuse des jolies mises en page, c'est donc sans hésité que je me suis

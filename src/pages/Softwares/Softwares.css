@@ -37,15 +37,18 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    flex: 1;
     background-image: url("../../assets/images/softwares-bg.png");
     background-size: cover;
     background-attachment: fixed;
     background-position: bottom center;
+    height: 50vh;
+    padding: 5vw;
 }
 
 .Softwares .citation span {
-    font-size: 1.5rem;
+    font-size: 3rem;
+    line-height: 1;
+    text-align: center;
     color: var(--white);
     font-family: var(--titleFont);
     display: flex;
@@ -54,6 +57,7 @@
 }
 
 .Softwares .citation span svg {
+    font-size: 7rem;
     color: var(--secondary);
 }
 
@@ -64,6 +68,9 @@
     border-radius: 43%;
     position: relative;
     opacity: 0.9;
+    margin-top: 2rem;
+    animation: 1s ease-in-out alternate infinite mouse-down;
+    animation-delay: 0.5s;
 }
 
 .Softwares .mouse .scroll {
@@ -97,6 +104,10 @@
         padding-bottom: 3vh;
     }
 
+    .Softwares .citation {
+        margin-top: 5vh;
+    }
+
     .Softwares .citation span {
         font-size: 3rem;
     }
@@ -116,6 +127,15 @@
         transform: translate(-50%, 50%);
     }
     to {
-        transform: translate(-50%, 100%);
+        transform: translate(-50%, 90%);
+    }
+}
+
+@keyframes mouse-down {
+    from {
+        transform: translate(0, 50%);
+    }
+    to {
+        transform: translate(0, 60%);
     }
 }

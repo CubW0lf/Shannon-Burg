@@ -41,7 +41,7 @@ const softwares = [
     },
     {
         id: 9,
-        name: "Procreatre",
+        name: "Procreate",
         level: 70,
     },
     {

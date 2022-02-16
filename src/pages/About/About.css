@@ -4,23 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.About h2 {
-    line-height: 0.8;
-}
-
-.About .up {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    width: 100%;
-    padding-bottom: 1vh;
-}
-
-.About hr {
-    width: 100%;
-    margin-bottom: 2vh;
+    padding-bottom: 5vh;
 }
 
 .About .shannon {
@@ -45,8 +29,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     padding: 5vw;
+    text-align: justify;
 }
 
 .About p {
@@ -56,11 +41,7 @@
 @media screen and (min-width: 1200px) {
     .About {
         flex-direction: row;
-    }
-
-    .About hr {
-        width: 100%;
-        margin-bottom: 2vh;
+        padding-bottom: 0;
     }
 
     .About .shannon {
@@ -77,6 +58,7 @@
         width: 60vw;
         height: 100vh;
         padding: 10vh;
+        align-items: flex-start;
     }
 
     .About p {

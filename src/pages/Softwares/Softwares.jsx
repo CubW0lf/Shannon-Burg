@@ -2,19 +2,22 @@ import softwares from "../../softwares.js";
 import SoftWare from "../../components/Software/Software";
 import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
 import "./Softwares.css";
+import Title from "../../components/Title/Title.jsx";
 
 const Softwares = () => {
     return (
         <section className="Softwares" id="softwares">
             <div className="section-container">
-                <div className="title-container">
-                    <h2>
-                        Et si on Parlait
-                        <br />
-                        compétences et Logiciels
-                    </h2>
-                    <hr />
-                </div>
+                <Title
+                    text={
+                        <h2>
+                            Et si on Parlait
+                            <br />
+                            compétences et Logiciels
+                        </h2>
+                    }
+                    social={false}
+                />
                 <div className="softwares-container">
                     {softwares.length !== 0 && softwares.map((s) => <SoftWare key={s.id} software={s} />)}
                 </div>

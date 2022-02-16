@@ -118,6 +118,17 @@ textarea {
     border: none;
     outline: none;
     width: 100%;
+    transition: all 1s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="url"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+    background: var(--white);
+    transition: all 1s ease-in-out;
 }
 
 ::placeholder {
