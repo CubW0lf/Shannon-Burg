@@ -1,0 +1,136 @@
+.ArticleSingle {
+    background-color: var(--bodyDark);
+    width: 100%;
+    padding: 5vw;
+    padding-top: calc(10vh + 5vw);
+}
+
+.ArticleSingle .date {
+    color: var(--white);
+}
+
+.ArticleSingle .content {
+    padding-top: 5vh;
+}
+
+.ArticleSingle .up {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.ArticleSingle .tags {
+    color: var(--white);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ArticleSingle .author {
+    background-color: var(--author);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    color: var(--white);
+}
+
+.ArticleSingle .author .thumbnail {
+    background-image: url("../../assets/images/avatar.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 15rem;
+    height: 15rem;
+}
+
+.ArticleSingle .author .text div {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.ArticleSingle .counter {
+    margin-top: 2rem;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    background-color: var(--bodyLight);
+    font-family: var(--titleFont);
+    position: relative;
+}
+
+.ArticleSingle .counter::after {
+    content: "";
+    position: absolute;
+    background-color: var(--bodyLight);
+    width: 2rem;
+    height: 1rem;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 90%);
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+}
+
+.ArticleSingle .comment {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid var(--author);
+}
+
+.ArticleSingle .comment .infos {
+    padding-left: 1rem;
+}
+
+.ArticleSingle .comment .infos .comment_author {
+    font-size: 2rem;
+}
+
+.ArticleSingle .comment .infos .text {
+    font-size: 1.5rem;
+    opacity: 0.8;
+}
+
+.ArticleSingle .answers {
+    margin-left: 3rem;
+}
+
+.ArticleSingle .comment-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width: 1200px) {
+    .ArticleSingle {
+        padding: 10vh;
+    }
+
+    .ArticleSingle .author {
+        flex-direction: row;
+    }
+
+    .ArticleSingle .author .text {
+        margin-left: 2rem;
+    }
+
+    .ArticleSingle .counter {
+        margin-top: 2rem;
+        padding: 1rem;
+        width: 100%;
+        text-align: center;
+        background-color: var(--bodyLight);
+        font-family: var(--titleFont);
+        position: relative;
+    }
+}

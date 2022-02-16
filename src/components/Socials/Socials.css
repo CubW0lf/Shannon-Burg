@@ -1,0 +1,18 @@
+.Socials {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: auto;
+}
+
+.Socials svg {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-left: 3vw;
+}
+
+@media screen and (min-width: 1200px) {
+    .Socials svg {
+        margin-left: 2rem;
+    }
+}

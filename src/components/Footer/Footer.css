@@ -1,0 +1,26 @@
+.Footer {
+    background: url("../../assets/images/footer.png");
+    background-size: cover;
+    height: 40vh;
+    clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+    transform: translateY(-12vh);
+    position: absolute;
+    right: 0;
+    left: 0;
+}
+
+.Footer .content {
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width: 1200px) {
+    .Footer {
+        height: 55vh;
+        transform: translateY(-17vh);
+        clip-path: polygon(0 30%, 100% 0, 100% 100%, 0% 100%);
+    }
+}

@@ -1,0 +1,85 @@
+.About {
+    background: var(--body);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.About h2 {
+    line-height: 0.8;
+}
+
+.About .up {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    padding-bottom: 1vh;
+}
+
+.About hr {
+    width: 100%;
+    margin-bottom: 2vh;
+}
+
+.About .shannon {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.About .shannon .shannon-image {
+    max-width: 100%;
+    height: 55vh;
+    object-fit: contain;
+}
+
+.About .text {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5vw;
+}
+
+.About p {
+    margin-bottom: 3vh;
+}
+
+@media screen and (min-width: 1200px) {
+    .About {
+        flex-direction: row;
+    }
+
+    .About hr {
+        width: 100%;
+        margin-bottom: 2vh;
+    }
+
+    .About .shannon {
+        width: 40vw;
+        height: 100vh;
+    }
+
+    .About .shannon .shannon-image {
+        margin-left: -15vw;
+        height: auto;
+    }
+
+    .About .text {
+        width: 60vw;
+        height: 100vh;
+        padding: 10vh;
+    }
+
+    .About p {
+        margin-bottom: 3vh;
+    }
+}

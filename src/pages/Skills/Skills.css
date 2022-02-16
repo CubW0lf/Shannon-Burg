@@ -1,0 +1,32 @@
+.Skills {
+    background-image: url("../../assets/images//skill-BG.png");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10vh;
+}
+
+.Skills .skills-container {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width: 1200px) {
+    .Skills {
+        height: 100vh;
+    }
+
+    .Skills .skills-container {
+        height: 80%;
+        width: 80%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 1rem;
+    }
+}
