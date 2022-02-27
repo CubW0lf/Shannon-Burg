@@ -2,7 +2,7 @@ import { useInView } from "react-intersection-observer";
 import "./Software.css";
 
 const Software = ({ software }) => {
-    const { ref, inView, entry } = useInView({});
+    const { ref, inView } = useInView({});
     return (
         <div className="Software" ref={ref}>
             <span className="software-name">{software.name}</span>

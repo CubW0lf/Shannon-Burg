@@ -13,7 +13,7 @@ const ArticleSingle = () => {
     const [message, setMessage] = useState("");
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/wp-json/wp/v2/posts/${id}`).then(({ data }) => {
+        axios.get(`http://wp.shannonburg.fr/wp-json/wp/v2/posts/${id}`).then(({ data }) => {
             setPost(data);
         });
     }, [id]);
@@ -21,7 +21,7 @@ const ArticleSingle = () => {
     const handlePostComment = (e) => {
         e.preventDefault();
         axios
-            .post(`http://localhost:8000/wp-json/wp/v2/comments`, {
+            .post(`http://wp.shannonburg.fr/wp-json/wp/v2/comments`, {
                 author_name: pseudo,
                 content: message,
                 date: new Date(),

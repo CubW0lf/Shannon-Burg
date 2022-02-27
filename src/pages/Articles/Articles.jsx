@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useContext } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { PostContext } from "../../contexts/PostContext.js";
@@ -21,7 +21,7 @@ const Articles = () => {
     useEffect(() => {
         if (category === null || category === undefined) {
             axios
-                .get(`http://localhost:8000/wp-json/wp/v2/posts?_embed&per_page=12&page=${currentPage}`)
+                .get(`http://wp.shannonburg.fr/wp-json/wp/v2/posts?_embed&per_page=12&page=${currentPage}`)
                 .then((response) => {
                     setPostsCount(response.headers["x-wp-total"]);
                     setPageCount(response.headers["x-wp-totalpages"]);
@@ -32,7 +32,7 @@ const Articles = () => {
                 setPreviousCategory(category);
                 setCurrentPage(1);
                 axios
-                    .get(`http://localhost:8000/wp-json/wp/v2/posts?_embed&per_page=12&categories=${category}&page=1`)
+                    .get(`http://wp.shannonburg.fr/wp-json/wp/v2/posts?_embed&per_page=12&categories=${category}&page=1`)
                     .then((response) => {
                         setPostsCount(response.headers["x-wp-total"]);
                         setPageCount(response.headers["x-wp-totalpages"]);
@@ -41,7 +41,7 @@ const Articles = () => {
             } else if (previousCategory === category) {
                 axios
                     .get(
-                        `http://localhost:8000/wp-json/wp/v2/posts?_embed&per_page=12&categories=${category}&page=${currentPage}`
+                        `http://wp.shannonburg.fr/wp-json/wp/v2/posts?_embed&per_page=12&categories=${category}&page=${currentPage}`
                     )
                     .then((response) => {
                         setPostsCount(response.headers["x-wp-total"]);
@@ -52,7 +52,7 @@ const Articles = () => {
                 setPreviousCategory(category);
                 setCurrentPage(1);
                 axios
-                    .get(`http://localhost:8000/wp-json/wp/v2/posts?_embed&per_page=12&categories=${category}&page=1`)
+                    .get(`http://wp.shannonburg.fr/wp-json/wp/v2/posts?_embed&per_page=12&categories=${category}&page=1`)
                     .then((response) => {
                         setPostsCount(response.headers["x-wp-total"]);
                         setPageCount(response.headers["x-wp-totalpages"]);
@@ -60,7 +60,16 @@ const Articles = () => {
                     });
             }
         }
-    }, [category, currentPage]);
+    }, [
+        category,
+        currentPage,
+        previousCategory,
+        setCurrentPage,
+        setPageCount,
+        setPosts,
+        setPostsCount,
+        setPreviousCategory,
+    ]);
     return (
         <div className="Articles">
             {posts.length !== 0 &&

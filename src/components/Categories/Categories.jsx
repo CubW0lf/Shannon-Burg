@@ -5,12 +5,12 @@ import "./Categories.css";
 import Category from "../Category/Category.jsx";
 
 const Categories = () => {
-    const { category, setCategory } = useContext(PostContext);
+    const { setCategory } = useContext(PostContext);
 
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8000/wp-json/wp/v2/categories?per_page=50").then(({ data }) => {
+        axios.get("http://wp.shannonburg.fr/wp-json/wp/v2/categories?per_page=50").then(({ data }) => {
             setCategories(data);
         });
     }, []);

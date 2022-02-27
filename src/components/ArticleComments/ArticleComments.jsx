@@ -6,7 +6,7 @@ const ArticleComments = ({ post }) => {
     const [comments, setComments] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/wp-json/wp/v2/comments?post=${post}`).then(({ data }) => {
+        axios.get(`http://wp.shannonburg.fr/wp-json/wp/v2/comments?post=${post}`).then(({ data }) => {
             setComments(data);
         });
     }, [post]);

@@ -9,10 +9,18 @@ const Slider = () => {
     const [current, setCurrent] = useState(1);
 
     useEffect(() => {
-        axios.get("http://localhost:8000/wp-json/wp/v2/posts?_embed").then(({ data }) => {
+        axios.get("http://wp.shannonburg.fr/wp-json/wp/v2/posts?_embed").then(({ data }) => {
             setLatest(data.slice(0, 3));
         });
-    }, []);
+
+        setTimeout(() => {
+            if (current < 3) {
+                setCurrent(current + 1);
+            } else {
+                setCurrent(1);
+            }
+        }, 5000);
+    }, [current]);
 
     const handlePrev = () => {
         if (current > 1) {
@@ -30,10 +38,9 @@ const Slider = () => {
         }
     };
 
+    const wrapper = document.querySelector(".slider-images");
     useEffect(() => {
-        const wrapper = document.querySelector(".slider-images");
-
-        if (latest.length !== 0) {
+        if (latest.length !== 0 && wrapper) {
             switch (current) {
                 case 1:
                     wrapper.style.transform = "translateX(0)";
@@ -44,17 +51,11 @@ const Slider = () => {
                 case 3:
                     wrapper.style.transform = "translateX(-200vw)";
                     break;
+                default:
+                    wrapper.style.transform = "translateX(0)";
             }
         }
-    }, [current]);
-
-    setTimeout(() => {
-        if (current < 3) {
-            setCurrent(current + 1);
-        } else {
-            setCurrent(1);
-        }
-    }, 5000);
+    }, [current, latest.length, wrapper]);
 
     return (
         <div className="Slider">
@@ -67,7 +68,9 @@ const Slider = () => {
                             <Link
                                 className="item"
                                 key={l.id}
-                                style={{ backgroundImage: `url("${l._embedded["wp:featuredmedia"][0].source_url}")` }}
+                                // style={{
+                                //     backgroundImage: `url("${l._embedded["wp:featuredmedia"][0].source_url}")`,
+                                // }}
                                 to={`article/${l.id}`}
                             >
                                 <h2 dangerouslySetInnerHTML={{ __html: l.title.rendered }}></h2>

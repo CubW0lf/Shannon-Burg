@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import ArticleCard from "../../components/ArticleCard/ArticleCard";
 import { useContext, useEffect } from "react";
 import axios from "axios";
 import { PostContext } from "../../contexts/PostContext";
@@ -9,10 +8,10 @@ const SearchResult = () => {
     const { search, result, setResult } = useContext(PostContext);
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/wp-json/wp/v2/search?search=${search}&_embed`).then(({ data }) => {
+        axios.get(`http://wp.shannonburg.fr/wp-json/wp/v2/search?search=${search}&_embed`).then(({ data }) => {
             setResult(data);
         });
-    }, [search]);
+    }, [search, setResult]);
 
     return (
         <section className="SearchResult">
