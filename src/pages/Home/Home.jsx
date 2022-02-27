@@ -17,10 +17,10 @@ const Home = () => {
                         <Typewriter
                             options={{
                                 strings: [
-                                    // "WEB DESIGNER ",
-                                    // "GRAPHIC DESIGNER ",
-                                    // "ILLUSTRATRICE ",
-                                    // "MAGICIENNE :) ",
+                                    "WEB DESIGNER ",
+                                    "GRAPHIC DESIGNER ",
+                                    "ILLUSTRATRICE ",
+                                    "MAGICIENNE :) ",
                                     "RETOUCHEUSE PHOTO ",
                                 ],
                                 autoStart: true,
