@@ -2,13 +2,13 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./ArticleComments.css";
 
-const ArticleComments = ({ post }) => {
-    const [comments, setComments] = useState([]);
-
-    useEffect(() => {
-        axios.get(`http://wp.shannonburg.fr/wp-json/wp/v2/comments?post=${post}`).then(({ data }) => {
-            setComments(data);
-        });
+const ArticleComments = ({ post, setComments, comments }) => {
+    useEffect(async () => {
+        const getComment = await axios
+            .get(`http://wp.shannonburg.fr/wp-json/wp/v2/comments?post=${post}`)
+            .then(async ({ data }) => {
+                setComments(data);
+            });
     }, [post]);
 
     const orderedComments = [];

@@ -1,6 +1,7 @@
 import axios from "axios";
 import dayjs from "dayjs";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { uxContext } from "../../contexts/uxContext.js";
 import { useParams } from "react-router-dom";
 import ArticleComments from "../../components/ArticleComments/ArticleComments";
 import ArticleInfos from "../../components/ArticleInfos/ArticleInfos";
@@ -11,6 +12,9 @@ const ArticleSingle = () => {
     const [post, setPost] = useState([]);
     const [pseudo, setPseudo] = useState("");
     const [message, setMessage] = useState("");
+    const [comments, setComments] = useState([]);
+
+    const { handleFlash, flash, flashType } = useContext(uxContext);
 
     useEffect(() => {
         axios.get(`http://wp.shannonburg.fr/wp-json/wp/v2/posts/${id}`).then(({ data }) => {
@@ -18,16 +22,22 @@ const ArticleSingle = () => {
         });
     }, [id]);
 
-    const handlePostComment = (e) => {
+    const handlePostComment = async (e) => {
         e.preventDefault();
-        axios
-            .post(`http://wp.shannonburg.fr/wp-json/wp/v2/comments?author_name=${pseudo}&content=${message}&post=${id}`)
-            .then(function (response) {
-                console.log(response);
-            })
-            .catch(function (error) {
-                console.log(error);
+        const setComment = await axios.post(
+            `http://wp.shannonburg.fr/wp-json/wp/v2/comments?author_name=${pseudo}&content=${message}&post=${id}`
+        );
+
+        if (setComment) {
+            handleFlash("success", "Votre commentaire à bien été envoyé", 3000);
+            setPseudo("");
+            setMessage("");
+            axios.get(`http://wp.shannonburg.fr/wp-json/wp/v2/comments?post=${id}`).then(({ data }) => {
+                setComments(data);
             });
+        } else {
+            handleFlash("error", "Une erreur est survenue", 3000);
+        }
     };
 
     return (
@@ -39,7 +49,7 @@ const ArticleSingle = () => {
                     <hr />
                     <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} className="content"></div>
                     <ArticleInfos article={post} />
-                    <ArticleComments post={id} />
+                    <ArticleComments post={id} comments={comments} setComments={setComments} />
                     <h2>Laisser un Commentaire</h2>
                     <hr />
                     <form className="comment-form" onSubmit={handlePostComment}>
@@ -48,6 +58,7 @@ const ArticleSingle = () => {
                             name=""
                             id=""
                             placeholder="Votre Pseudo"
+                            value={pseudo}
                             onChange={(e) => setPseudo(e.target.value)}
                         />
                         <textarea
@@ -56,10 +67,12 @@ const ArticleSingle = () => {
                             cols="30"
                             rows="10"
                             placeholder="Votre message"
+                            value={message}
                             onChange={(e) => setMessage(e.target.value)}
                         ></textarea>
                         <button type="submit">Envoyer</button>
                     </form>
+                    {flash !== "" ? <div className={`flash ${flashType !== "" ? flashType : ""}`}>{flash}</div> : ""}
                     <div className="push"></div>
                 </>
             )}
