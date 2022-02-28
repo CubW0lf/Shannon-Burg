@@ -21,13 +21,7 @@ const ArticleSingle = () => {
     const handlePostComment = (e) => {
         e.preventDefault();
         axios
-            .post(`http://wp.shannonburg.fr/wp-json/wp/v2/comments`, {
-                author_name: pseudo,
-                content: message,
-                date: new Date(),
-                parent: 0,
-                post: id,
-            })
+            .post(`http://wp.shannonburg.fr/wp-json/wp/v2/comments?author_name=${pseudo}&content=${message}&post=${id}`)
             .then(function (response) {
                 console.log(response);
             })
