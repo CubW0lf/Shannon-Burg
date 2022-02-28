@@ -11,7 +11,7 @@ const Home = () => {
         <>
             <section className="Home" id="home">
                 <div className="citations">
-                    <span className="welcome">Bienvenue</span>
+                    <span className="welcome">Bienvenue 2</span>
                     <h2>
                         <span>Je Suis </span>{" "}
                         <Typewriter
