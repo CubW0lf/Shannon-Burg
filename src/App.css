@@ -22,8 +22,9 @@
     --currentPage: #46546e;
     --author: #2d2837;
     --input: #a4a1b6;
-    --valid: #42db8c;
-    --alert: #ff614d;
+    --success: #42db8c;
+    --error: #ff614d;
+    --info: #6a98cc;
     --font: "Roboto", sans-serif;
     --titleFont: "Bebas Neue", cursive;
 }
@@ -274,7 +275,7 @@ hr {
 }
 
 .error {
-    background-color: var(--alert);
+    background-color: var(--error);
 }
 
 .flash {
@@ -302,6 +303,10 @@ hr {
     justify-content: center;
     align-items: center;
     padding: 3vh;
+}
+
+.info {
+    background-color: var(--info);
 }
 
 .message {
@@ -334,7 +339,7 @@ hr {
 }
 
 .success {
-    background-color: var(--valid);
+    background-color: var(--success);
 }
 
 .wp-block-embed__wrapper {

@@ -124,7 +124,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 15%;
         position: relative;
     }
 
@@ -132,7 +131,9 @@
         list-style-type: none;
         font-family: var(--titleFont);
         font-size: 3vh;
+        margin-left: 1vw;
         margin-right: 1vw;
+        text-align: center;
     }
 
     .Navbar .logo {

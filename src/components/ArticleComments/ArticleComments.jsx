@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 import axios from "axios";
 import "./ArticleComments.css";
 
-const ArticleComments = ({ post, setComments, comments, setParent }) => {
+const ArticleComments = ({ post, setComments, comments, handleParent }) => {
     useEffect(() => {
         axios.get(`http://wp.shannonburg.fr/wp-json/wp/v2/comments?post=${post}`).then(({ data }) => {
             setComments(data);
@@ -18,7 +18,9 @@ const ArticleComments = ({ post, setComments, comments, setParent }) => {
         }
     }
 
-    orderedComments.forEach((m) => comments.filter((c) => m.parent.id === c.parent && m.sub.push(c)));
+    console.log(orderedComments);
+
+    orderedComments.forEach((o) => comments.filter((c) => c.parent === o.parent.id && o.sub.push(c)));
 
     return (
         <div className="ArticleComments commentaires">
@@ -32,11 +34,14 @@ const ArticleComments = ({ post, setComments, comments, setParent }) => {
                             </div>
                             <div className="infos">
                                 <div className="comment_author">
-                                    {p.parent.author_name}
+                                    <span>
+                                        {p.parent.author_name}
+                                        {p.parent.author === 1 && <span className="auteur">Auteur</span>}
+                                    </span>
                                     <span className="date">{dayjs(p.parent.date).format("DD/MM/YYYY hh:mm")}</span>
                                 </div>
                                 <div className="text" dangerouslySetInnerHTML={{ __html: p.parent.content.rendered }}></div>
-                                <span className="answer" onClick={() => setParent(p.parent.id)}>
+                                <span className="answer" onClick={() => handleParent(p.parent.id, p.parent.author_name)}>
                                     Répondre
                                 </span>
                             </div>
@@ -57,7 +62,7 @@ const ArticleComments = ({ post, setComments, comments, setParent }) => {
                                                 className="text"
                                                 dangerouslySetInnerHTML={{ __html: s.content.rendered }}
                                             ></div>
-                                            <span className="answer" onClick={() => setParent(s.id)}>
+                                            <span className="answer" onClick={() => handleParent(s.parent, s.author_name)}>
                                                 Répondre
                                             </span>
                                         </div>

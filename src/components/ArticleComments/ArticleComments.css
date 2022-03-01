@@ -7,3 +7,22 @@
 .ArticleComments .answer {
     cursor: pointer;
 }
+
+.ArticleComments .infos {
+    width: 100%;
+}
+
+.ArticleComments .comment_author {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ArticleComments .auteur {
+    font-size: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-left: 1vw;
+    background-color: var(--bodyLight);
+    border-radius: 5px;
+}

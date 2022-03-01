@@ -15,16 +15,23 @@ const ArticleSingle = () => {
     const [message, setMessage] = useState("");
     const [comments, setComments] = useState([]);
     const [parent, setParent] = useState(0);
+    const [answerTo, setAnswerTo] = useState("");
+    const [answerToAuthor, setAnswerToAuthor] = useState("");
 
     const { handleFlash, flash, flashType } = useContext(uxContext);
+
+    const handleParent = (parentId, author) => {
+        setParent(parentId);
+        setAnswerToAuthor(answerTo);
+        setAnswerTo(`Vous répondez à : ${author}`);
+        handleFlash("info", `Vous répondez à : ${author}`, 3000);
+    };
 
     useEffect(() => {
         axios.get(`http://wp.shannonburg.fr/wp-json/wp/v2/posts/${id}`).then(({ data }) => {
             setPost(data);
         });
     }, [id]);
-
-    console.log(post);
 
     const handlePostComment = async (e) => {
         e.preventDefault();
@@ -52,8 +59,9 @@ const ArticleSingle = () => {
                     <hr />
                     <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} className="content"></div>
                     <ArticleInfos article={post} />
-                    <ArticleComments post={id} comments={comments} setComments={setComments} setParent={setParent} />
+                    <ArticleComments post={id} comments={comments} setComments={setComments} handleParent={handleParent} />
                     <Title text={<h2>Laisser un Commentaire</h2>} social={false} />
+                    {answerTo !== "" && <p>{answerTo}</p>}
                     <form className="comment-form" onSubmit={handlePostComment}>
                         <input
                             type="text"

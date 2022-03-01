@@ -1,8 +1,8 @@
 import softwares from "../../softwares.js";
-import SoftWare from "../../components/Software/Software";
 import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
-import "./Softwares.css";
+import SoftWare from "../../components/Software/Software";
 import Title from "../../components/Title/Title.jsx";
+import "./Softwares.css";
 
 const Softwares = () => {
     return (
@@ -19,7 +19,7 @@ const Softwares = () => {
                     social={false}
                 />
                 <div className="softwares-container">
-                    {softwares.length !== 0 && softwares.map((s) => <SoftWare key={s.id} software={s} />)}
+                    {softwares?.length !== 0 && softwares?.map((s) => <SoftWare key={s.id} software={s} />)}
                 </div>
             </div>
             <div className="citation">

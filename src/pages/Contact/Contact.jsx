@@ -18,7 +18,6 @@ const Contact = () => {
                         value={pseudo}
                         onChange={(e) => setPseudo(e.target.value)}
                     />
-                    Email:
                     <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
                     <textarea
                         name=""
