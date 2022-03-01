@@ -21,7 +21,7 @@
     .Search .cursor {
         width: 1px;
         height: 70%;
-        left: 1vh;
+        left: 1vw;
         background-color: var(--bodyDark);
         position: absolute;
         animation: 1s ease-in-out infinite blink;
@@ -32,7 +32,7 @@
     }
 
     .Search form button[type="submit"] {
-        height: 5vh;
+        height: 7vh;
         width: 5vh;
         padding-right: 1vw;
         display: flex;
@@ -55,15 +55,11 @@
         transition: all 1s ease-in-out;
     }
 
-    .Search svg {
-        font-size: 2.2rem;
-    }
-
     .Search .toggle {
         cursor: pointer;
-        height: 5vh;
-        width: 5vh;
-        padding: 1vh;
+        height: 7vh;
+        width: 7vh;
+        padding: 1.5vh;
         background-color: var(--secondary);
         color: #ae7a93;
     }
@@ -72,6 +68,7 @@
         margin-bottom: 0;
         height: 100%;
         width: 20vw;
+        padding-left: 1vw;
     }
 }
 

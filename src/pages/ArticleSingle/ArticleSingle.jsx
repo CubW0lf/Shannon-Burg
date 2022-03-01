@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import ArticleComments from "../../components/ArticleComments/ArticleComments";
 import ArticleInfos from "../../components/ArticleInfos/ArticleInfos";
 import "./ArticleSingle.css";
+import Title from "../../components/Title/Title.jsx";
 
 const ArticleSingle = () => {
     const { id } = useParams();
@@ -13,6 +14,7 @@ const ArticleSingle = () => {
     const [pseudo, setPseudo] = useState("");
     const [message, setMessage] = useState("");
     const [comments, setComments] = useState([]);
+    const [parent, setParent] = useState(0);
 
     const { handleFlash, flash, flashType } = useContext(uxContext);
 
@@ -25,7 +27,7 @@ const ArticleSingle = () => {
     const handlePostComment = async (e) => {
         e.preventDefault();
         const setComment = await axios.post(
-            `http://wp.shannonburg.fr/wp-json/wp/v2/comments?author_name=${pseudo}&content=${message}&post=${id}`
+            `http://wp.shannonburg.fr/wp-json/wp/v2/comments?author_name=${pseudo}&content=${message}&post=${id}&parent=${parent}`
         );
 
         if (setComment) {
@@ -39,7 +41,6 @@ const ArticleSingle = () => {
             handleFlash("error", "Une erreur est survenue", 3000);
         }
     };
-
     return (
         <section className="ArticleSingle">
             {post.length !== 0 && (
@@ -49,9 +50,8 @@ const ArticleSingle = () => {
                     <hr />
                     <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} className="content"></div>
                     <ArticleInfos article={post} />
-                    <ArticleComments post={id} comments={comments} setComments={setComments} />
-                    <h2>Laisser un Commentaire</h2>
-                    <hr />
+                    <ArticleComments post={id} comments={comments} setComments={setComments} setParent={setParent} />
+                    <Title text={<h2>Laisser un Commentaire</h2>} social={false} />
                     <form className="comment-form" onSubmit={handlePostComment}>
                         <input
                             type="text"

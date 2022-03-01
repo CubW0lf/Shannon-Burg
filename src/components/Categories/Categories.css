@@ -118,10 +118,15 @@
         position: absolute;
         top: 5vh;
         margin-top: auto;
+        opacity: 1;
     }
 
     .Categories .parent .sub.active {
+        transform: scaleY(1);
         padding-top: 0;
+        height: auto;
+        opacity: 1;
+        transition: all 0.4s ease-in-out, opacity 0.2s;
     }
 
     .Categories .parent:hover .sub li {

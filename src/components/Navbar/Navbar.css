@@ -109,18 +109,15 @@
 }
 
 @media screen and (min-width: 1200px) {
-    .Navbar {
-        filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
-    }
-
     .menu.active {
         display: none;
     }
 
     .Navbar {
         flex-direction: row;
-        height: 5vh;
+        height: 7vh;
         background: rgba(66, 55, 58, 0.5);
+        filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
     }
 
     .Navbar ul {
@@ -134,11 +131,11 @@
     .Navbar ul li {
         list-style-type: none;
         font-family: var(--titleFont);
-        font-size: 1.8vh;
+        font-size: 3vh;
         margin-right: 1vw;
     }
 
     .Navbar .logo {
-        height: 4vh;
+        height: 6vh;
     }
 }

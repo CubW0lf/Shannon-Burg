@@ -1,8 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import dayjs from "dayjs";
 import axios from "axios";
 import "./ArticleComments.css";
 
-const ArticleComments = ({ post, setComments, comments }) => {
+const ArticleComments = ({ post, setComments, comments, setParent }) => {
     useEffect(() => {
         axios.get(`http://wp.shannonburg.fr/wp-json/wp/v2/comments?post=${post}`).then(({ data }) => {
             setComments(data);
@@ -30,8 +31,14 @@ const ArticleComments = ({ post, setComments, comments }) => {
                                 <img src={p.parent.author_avatar_urls[96]} alt="" />
                             </div>
                             <div className="infos">
-                                <div className="comment_author">{p.parent.author_name}</div>
+                                <div className="comment_author">
+                                    {p.parent.author_name}
+                                    <span className="date">{dayjs(p.parent.date).format("DD/MM/YYYY hh:mm")}</span>
+                                </div>
                                 <div className="text" dangerouslySetInnerHTML={{ __html: p.parent.content.rendered }}></div>
+                                <span className="answer" onClick={() => setParent(p.parent.id)}>
+                                    Répondre
+                                </span>
                             </div>
                         </div>
                         {p.sub.length !== 0 && (
@@ -42,11 +49,17 @@ const ArticleComments = ({ post, setComments, comments }) => {
                                             <img src={s.author_avatar_urls[96]} alt="" />
                                         </div>
                                         <div className="infos">
-                                            <div className="comment_author">{s.author_name}</div>
+                                            <div className="comment_author">
+                                                {s.author_name}
+                                                <span className="date">{dayjs(s.date).format("DD/MM/YYYY hh:mm")}</span>
+                                            </div>
                                             <div
                                                 className="text"
                                                 dangerouslySetInnerHTML={{ __html: s.content.rendered }}
                                             ></div>
+                                            <span className="answer" onClick={() => setParent(s.id)}>
+                                                Répondre
+                                            </span>
                                         </div>
                                     </div>
                                 ))}

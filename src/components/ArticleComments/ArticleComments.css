@@ -1,0 +1,9 @@
+.ArticleComments.commentaires > li > div > div.infos > div.comment_author > span {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-left: 1vw;
+}
+
+.ArticleComments .answer {
+    cursor: pointer;
+}

@@ -12,21 +12,18 @@ const Category = ({ category, setCategory }) => {
 
     return (
         <li className="Category parent">
-            <span onClick={() => handleClick(category.parent.id)}>
-                {category.parent.name}{" "}
-                {category.sub.length !== 0 &&
-                    (toggleSub ? (
-                        <BsFillCaretUpSquareFill className="mobile" />
-                    ) : (
-                        <BsFillCaretDownSquareFill className="mobile" />
-                    ))}
-            </span>
+            <span
+                onClick={() => handleClick(category.parent.object_id)}
+                dangerouslySetInnerHTML={{ __html: category.parent.title }}
+            ></span>
             {category.sub.length !== 0 && (
                 <ul className={`sub${toggleSub ? " active" : ""}`}>
                     {category.sub.map((s) => (
-                        <li key={s.id} onClick={() => setCategory(s.id)}>
-                            {s.name}
-                        </li>
+                        <li
+                            key={s.ID}
+                            onClick={() => setCategory(s.object_id)}
+                            dangerouslySetInnerHTML={{ __html: s.title }}
+                        ></li>
                     ))}
                 </ul>
             )}
