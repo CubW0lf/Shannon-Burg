@@ -24,6 +24,8 @@ const ArticleSingle = () => {
         });
     }, [id]);
 
+    console.log(post);
+
     const handlePostComment = async (e) => {
         e.preventDefault();
         const setComment = await axios.post(
