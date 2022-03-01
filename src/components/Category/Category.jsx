@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { BsFillCaretDownSquareFill, BsFillCaretUpSquareFill } from "react-icons/bs";
 import "./Category.css";
 
 const Category = ({ category, setCategory }) => {
