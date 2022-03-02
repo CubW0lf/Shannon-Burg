@@ -1,32 +1,32 @@
 .Articles {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 5vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 5vw;
 }
 
 .Articles a {
-    width: 100%;
-    height: 40vh;
-    margin-bottom: 2vh;
+  width: 100%;
+  height: 40vh;
+  margin-bottom: 2vh;
 }
 
 @media screen and (min-width: 1200px) {
-    .Articles {
-        height: 100vh;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        gap: 1rem;
-        padding: 5vh 10vh 5vh 10vh;
-    }
+  .Articles {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 5vh 10vh 5vh 10vh;
+  }
 
-    .Articles a {
-        width: 100%;
-        height: 100%;
-        margin-bottom: 2vh;
-    }
+  .Articles a {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 2vh;
+  }
 }
