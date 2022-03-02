@@ -16,13 +16,11 @@ const ArticleSingle = () => {
     const [comments, setComments] = useState([]);
     const [parent, setParent] = useState(0);
     const [answerTo, setAnswerTo] = useState("");
-    const [answerToAuthor, setAnswerToAuthor] = useState("");
 
     const { handleFlash, flash, flashType } = useContext(uxContext);
 
     const handleParent = (parentId, author) => {
         setParent(parentId);
-        setAnswerToAuthor(answerTo);
         setAnswerTo(`Vous répondez à : ${author}`);
         handleFlash("info", `Vous répondez à : ${author}`, 3000);
     };
