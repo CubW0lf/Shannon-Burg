@@ -8,7 +8,7 @@ const About = () => {
     const [bio, setBio] = useState();
 
     useEffect(() => {
-        axios.get("http://wp.shannonburg.fr/wp-json/wp/v2/pages/42").then(({ data }) => {
+        axios.get("https://wp.shannonburg.fr/wp-json/wp/v2/pages/42").then(({ data }) => {
             setBio(data);
         });
     }, []);

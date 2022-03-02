@@ -26,7 +26,7 @@ const ArticleSingle = () => {
     };
 
     useEffect(() => {
-        axios.get(`http://wp.shannonburg.fr/wp-json/wp/v2/posts/${id}`).then(({ data }) => {
+        axios.get(`https://wp.shannonburg.fr/wp-json/wp/v2/posts/${id}`).then(({ data }) => {
             setPost(data);
         });
     }, [id]);
@@ -34,14 +34,14 @@ const ArticleSingle = () => {
     const handlePostComment = async (e) => {
         e.preventDefault();
         const setComment = await axios.post(
-            `http://wp.shannonburg.fr/wp-json/wp/v2/comments?author_name=${pseudo}&content=${message}&post=${id}&parent=${parent}`
+            `https://wp.shannonburg.fr/wp-json/wp/v2/comments?author_name=${pseudo}&content=${message}&post=${id}&parent=${parent}`
         );
 
         if (setComment) {
             handleFlash("success", "Votre commentaire à bien été envoyé", 3000);
             setPseudo("");
             setMessage("");
-            axios.get(`http://wp.shannonburg.fr/wp-json/wp/v2/comments?post=${id}`).then(({ data }) => {
+            axios.get(`https://wp.shannonburg.fr/wp-json/wp/v2/comments?post=${id}`).then(({ data }) => {
                 setComments(data);
             });
         } else {

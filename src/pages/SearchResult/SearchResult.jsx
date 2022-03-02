@@ -8,7 +8,7 @@ const SearchResult = () => {
     const { search, result, setResult } = useContext(PostContext);
 
     useEffect(() => {
-        axios.get(`http://wp.shannonburg.fr/wp-json/wp/v2/search?search=${search}&_embed`).then(({ data }) => {
+        axios.get(`https://wp.shannonburg.fr/wp-json/wp/v2/search?search=${search}&_embed`).then(({ data }) => {
             setResult(data);
         });
     }, [search, setResult]);

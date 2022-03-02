@@ -5,7 +5,7 @@ import "./ArticleComments.css";
 
 const ArticleComments = ({ post, setComments, comments, handleParent }) => {
     useEffect(() => {
-        axios.get(`http://wp.shannonburg.fr/wp-json/wp/v2/comments?post=${post}`).then(({ data }) => {
+        axios.get(`https://wp.shannonburg.fr/wp-json/wp/v2/comments?post=${post}`).then(({ data }) => {
             setComments(data);
         });
     }, [post, setComments]);

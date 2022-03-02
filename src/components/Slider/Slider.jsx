@@ -13,7 +13,7 @@ const Slider = () => {
     const [latest, setLatest] = useState([]);
 
     useEffect(() => {
-        axios.get("http://wp.shannonburg.fr/wp-json/wp/v2/posts").then(({ data }) => {
+        axios.get("https://wp.shannonburg.fr/wp-json/wp/v2/posts").then(({ data }) => {
             setLatest(data.slice(0, 6));
         });
     }, []);

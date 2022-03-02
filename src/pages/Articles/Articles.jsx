@@ -21,7 +21,7 @@ const Articles = () => {
     useEffect(() => {
         if (category === null || category === undefined) {
             axios
-                .get(`http://wp.shannonburg.fr/wp-json/wp/v2/posts?_embed&per_page=12&page=${currentPage}`)
+                .get(`https://wp.shannonburg.fr/wp-json/wp/v2/posts?_embed&per_page=12&page=${currentPage}`)
                 .then((response) => {
                     setPostsCount(response.headers["x-wp-total"]);
                     setPageCount(response.headers["x-wp-totalpages"]);
@@ -32,7 +32,7 @@ const Articles = () => {
                 setPreviousCategory(category);
                 setCurrentPage(1);
                 axios
-                    .get(`http://wp.shannonburg.fr/wp-json/wp/v2/posts?_embed&per_page=12&categories=${category}&page=1`)
+                    .get(`https://wp.shannonburg.fr/wp-json/wp/v2/posts?_embed&per_page=12&categories=${category}&page=1`)
                     .then((response) => {
                         setPostsCount(response.headers["x-wp-total"]);
                         setPageCount(response.headers["x-wp-totalpages"]);
@@ -41,7 +41,7 @@ const Articles = () => {
             } else if (previousCategory === category) {
                 axios
                     .get(
-                        `http://wp.shannonburg.fr/wp-json/wp/v2/posts?_embed&per_page=12&categories=${category}&page=${currentPage}`
+                        `https://wp.shannonburg.fr/wp-json/wp/v2/posts?_embed&per_page=12&categories=${category}&page=${currentPage}`
                     )
                     .then((response) => {
                         setPostsCount(response.headers["x-wp-total"]);
@@ -52,7 +52,7 @@ const Articles = () => {
                 setPreviousCategory(category);
                 setCurrentPage(1);
                 axios
-                    .get(`http://wp.shannonburg.fr/wp-json/wp/v2/posts?_embed&per_page=12&categories=${category}&page=1`)
+                    .get(`https://wp.shannonburg.fr/wp-json/wp/v2/posts?_embed&per_page=12&categories=${category}&page=1`)
                     .then((response) => {
                         setPostsCount(response.headers["x-wp-total"]);
                         setPageCount(response.headers["x-wp-totalpages"]);

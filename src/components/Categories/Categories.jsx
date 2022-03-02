@@ -11,7 +11,7 @@ const Categories = () => {
     const [menu, setMenu] = useState([]);
 
     useEffect(() => {
-        axios.get("http://wp.shannonburg.fr/wp-json/wp/v2/menu").then(({ data }) => {
+        axios.get("https://wp.shannonburg.fr/wp-json/wp/v2/menu").then(({ data }) => {
             setCategories(data);
         });
     }, []);
