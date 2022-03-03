@@ -1,23 +1,31 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { PostContext } from "./contexts/PostContext.js";
 import { uxContext } from "./contexts/uxContext.js";
+import { findAllPosts } from "./services/articlesAPI.js";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import ArticleSingle from "./pages/ArticleSingle/ArticleSingle";
-import "./App.css";
 import Home from "./pages/Home/Home";
 import SearchResult from "./pages/SearchResult/SearchResult.jsx";
+import "./App.css";
 
 function App() {
-  const [category, setCategory] = useState(null);
-  const [previousCategory, setPreviousCategory] = useState(null);
+  const [categoryId, setCategoryId] = useState(null);
   const [pageCount, setPageCount] = useState(1);
+  const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [search, setSearch] = useState("");
   const [result, setResult] = useState([]);
   const [flash, setFlash] = useState("");
   const [flashType, setFlashType] = useState("");
+
+  useEffect(() => {
+    findAllPosts(currentPage, categoryId).then((data) => {
+      setPosts(data);
+      setPageCount(data._paging.totalPages);
+    });
+  }, [currentPage, categoryId]);
 
   const deleteFlash = () => {
     setFlash("");
@@ -33,14 +41,14 @@ function App() {
   return (
     <PostContext.Provider
       value={{
-        category,
-        setCategory,
+        categoryId,
+        setCategoryId,
+        posts,
+        setPosts,
         pageCount,
         setPageCount,
         currentPage,
         setCurrentPage,
-        previousCategory,
-        setPreviousCategory,
         search,
         setSearch,
         result,

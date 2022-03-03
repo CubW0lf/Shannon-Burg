@@ -1,14 +1,13 @@
-import { useFindPageByidQuery } from "../../services/wordpress.js";
-import Shannon from "../../assets/images/shannon-about.png";
-import Title from "../../components/Title/Title";
-import ArticlesLoader from "../../components/ArticlesLoader/ArticlesLoader.js";
+// import Shannon from "../../assets/images/shannon-about.png";
+// import Title from "../../components/Title/Title";
+// import ArticlesLoader from "../../components/ArticlesLoader/ArticlesLoader.js";
 import "./About.css";
 
 const About = () => {
-  const { data: bio, isLoading, isSuccess, error } = useFindPageByidQuery(42);
+  // const { data: bio, isLoading, isSuccess, error } = useFindPageByidQuery(42);
   return (
     <section className="About" id="about">
-      {error && <>Oh no, there was an error</>}
+      {/* {error && <>Oh no, there was an error</>}
       {isLoading && <ArticlesLoader />}
       {isSuccess ? (
         <>
@@ -32,7 +31,7 @@ const About = () => {
         </>
       ) : (
         ""
-      )}
+      )} */}
     </section>
   );
 };

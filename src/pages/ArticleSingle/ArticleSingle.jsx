@@ -1,14 +1,14 @@
 import axios from "axios";
 import dayjs from "dayjs";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { uxContext } from "../../contexts/uxContext.js";
 import { useParams } from "react-router-dom";
 import ArticleComments from "../../components/ArticleComments/ArticleComments";
 import ArticleInfos from "../../components/ArticleInfos/ArticleInfos";
 import Title from "../../components/Title/Title.jsx";
-import { useFindByIdQuery } from "../../services/wordpress.js";
 import ArticlesLoader from "../../components/ArticlesLoader/ArticlesLoader.js";
 import "./ArticleSingle.css";
+import { findPost } from "../../services/articlesAPI.js";
 
 const ArticleSingle = () => {
   const { id } = useParams();
@@ -17,21 +17,22 @@ const ArticleSingle = () => {
   const [comments, setComments] = useState([]);
   const [parent, setParent] = useState(0);
   const [answerTo, setAnswerTo] = useState("");
+  const [post, setPost] = useState([]);
+
+  useEffect(() => {
+    findPost(id).then((data) => {
+      setPost(data);
+    });
+    window.scrollTo(0, 0);
+  }, [id]);
 
   const { handleFlash, flash, flashType } = useContext(uxContext);
-  const { data: post, isLoading, isSuccess, error } = useFindByIdQuery(id);
 
   const handleParent = (parentId, author) => {
     setParent(parentId);
     setAnswerTo(`Vous répondez à : ${author}`);
     handleFlash("info", `Vous répondez à : ${author}`, 3000);
   };
-
-  //   useEffect(() => {
-  //     axios.get(`https://wp.shannonburg.fr/wp-json/wp/v2/posts/${id}`).then(({ data }) => {
-  //       setPost(data);
-  //     });
-  //   }, [id]);
 
   const handlePostComment = async (e) => {
     e.preventDefault();
@@ -51,15 +52,13 @@ const ArticleSingle = () => {
     }
   };
   return (
-    <section className="ArticleSingle">
-      {error && <>Oh no, there was an error</>}
-      {isLoading && <ArticlesLoader />}
-      {isSuccess && (
-        <>
-          <span className="date">{dayjs(post.date).format("DD/MM/YYYY")}</span>
-          <h1>{post.title.rendered}</h1>
+    <>
+      {post.length !== 0 ? (
+        <section className="ArticleSingle">
+          <span className="date">{dayjs(post?.date).format("DD/MM/YYYY")}</span>
+          <h1>{post?.title.rendered}</h1>
           <hr />
-          <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} className="content"></div>
+          <div dangerouslySetInnerHTML={{ __html: post?.content.rendered }} className="content"></div>
           <ArticleInfos article={post} />
           <ArticleComments post={id} comments={comments} setComments={setComments} handleParent={handleParent} />
           <Title text={<h2>Laisser un Commentaire</h2>} social={false} />
@@ -86,9 +85,11 @@ const ArticleSingle = () => {
           </form>
           {flash !== "" ? <div className={`flash ${flashType !== "" ? flashType : ""}`}>{flash}</div> : ""}
           <div className="push"></div>
-        </>
+        </section>
+      ) : (
+        <ArticlesLoader className="ArticleSingle" />
       )}
-    </section>
+    </>
   );
 };
 

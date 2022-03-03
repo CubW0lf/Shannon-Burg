@@ -1,6 +1,17 @@
-import axios from "axios";
 import api from "./api.js";
 
-export const findAll = () => {
-  return axios.get(`${api}/posts?_embed&per_page=12&page=1`).then(({ data }) => data);
-};
+export const findAllPosts = (page, category) =>
+  api
+    .posts()
+    .perPage(12)
+    .page(page)
+    .categories(category)
+    .then((data) => data)
+    .catch((err) => "Désolé une erreur est survenue et nous ne pouvons pas retrouver les articles");
+
+export const findPost = (id) =>
+  api
+    .posts()
+    .id(id)
+    .then((data) => data)
+    .catch((err) => "Désolé une erreur est survenue et nous ne pouvons pas retrouver les articles");

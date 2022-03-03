@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { PostContext } from "../../contexts/PostContext";
 import "./Category.css";
 
-const Category = ({ category, setCategory }) => {
+const Category = ({ category }) => {
   const [toggleSub, setToggleSub] = useState(false);
+
+  const { setCategoryId, setCurrentPage } = useContext(PostContext);
 
   const handleClick = (category) => {
     setToggleSub(!toggleSub);
-    setCategory(category);
+    setCategoryId(category);
+    setCurrentPage(1);
   };
 
   return (
@@ -18,7 +22,7 @@ const Category = ({ category, setCategory }) => {
       {category.sub.length !== 0 && (
         <ul className={`sub${toggleSub ? " active" : ""}`}>
           {category.sub.map((s) => (
-            <li key={s.ID} onClick={() => setCategory(s.object_id)} dangerouslySetInnerHTML={{ __html: s.title }}></li>
+            <li key={s.ID} onClick={() => setCategoryId(s.object_id)} dangerouslySetInnerHTML={{ __html: s.title }}></li>
           ))}
         </ul>
       )}

@@ -20,7 +20,8 @@
         "react-scripts": "5.0.0",
         "swiper": "^8.0.6",
         "typewriter-effect": "^2.18.2",
-        "web-vitals": "^2.1.4"
+        "web-vitals": "^2.1.4",
+        "wpapi": "^1.2.2"
     },
     "scripts": {
         "start": "react-scripts start",
