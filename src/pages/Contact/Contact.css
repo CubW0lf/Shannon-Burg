@@ -1,54 +1,58 @@
 .Contact {
-    background-color: var(--bodyDark);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    overflow-x: hidden;
-    padding-top: 10vh;
-    padding-bottom: 10vh;
+  background-color: var(--bodyDark);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow-x: hidden;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
 }
 
 .Contact form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Contact form p {
+  width: 100%;
 }
 
 .Contact .main {
-    width: 100%;
-    padding: 5vw;
+  width: 100%;
+  padding: 5vw;
 }
 
 .Contact aside {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
 }
 
 .Contact aside img {
-    width: 100%;
-    object-fit: contain;
+  width: 100%;
+  object-fit: contain;
 }
 
 @media screen and (min-width: 1200px) {
-    .Contact {
-        flex-direction: row;
-        padding-top: 0;
-    }
+  .Contact {
+    flex-direction: row;
+    padding-top: 0;
+  }
 
-    .Contact .main {
-        width: 60vw;
-    }
+  .Contact .main {
+    width: 60vw;
+  }
 
-    .Contact aside {
-        justify-content: flex-end;
-        width: 40vw;
-    }
+  .Contact aside {
+    justify-content: flex-end;
+    width: 40vw;
+  }
 
-    .Contact aside img {
-        transform: translateX(5vw);
-    }
+  .Contact aside img {
+    transform: translateX(5vw);
+  }
 }

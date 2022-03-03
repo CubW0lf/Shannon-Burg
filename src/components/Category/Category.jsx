@@ -7,22 +7,23 @@ const Category = ({ category }) => {
 
   const { setCategoryId, setCurrentPage } = useContext(PostContext);
 
-  const handleClick = (category) => {
-    setToggleSub(!toggleSub);
-    setCategoryId(category);
+  const handleCategory = (id) => {
     setCurrentPage(1);
+    setToggleSub(!toggleSub);
+    setCategoryId(id);
+    window.location.href = "/#portfolio";
   };
 
   return (
     <li className="Category parent">
       <span
-        onClick={() => handleClick(category.parent.object_id)}
+        onClick={() => handleCategory(category.parent.object_id)}
         dangerouslySetInnerHTML={{ __html: category.parent.title }}
       ></span>
       {category.sub.length !== 0 && (
         <ul className={`sub${toggleSub ? " active" : ""}`}>
           {category.sub.map((s) => (
-            <li key={s.ID} onClick={() => setCategoryId(s.object_id)} dangerouslySetInnerHTML={{ __html: s.title }}></li>
+            <li key={s.ID} onClick={() => handleCategory(s.object_id)} dangerouslySetInnerHTML={{ __html: s.title }}></li>
           ))}
         </ul>
       )}

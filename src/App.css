@@ -22,8 +22,8 @@
   --currentPage: #46546e;
   --author: #2d2837;
   --input: #a4a1b6;
-  --success: #42db8c;
-  --error: #ff614d;
+  --success: #e9d1b1;
+  --error: #ecc5d8;
   --info: #837f9b;
   --font: "Roboto", sans-serif;
   --titleFont: "Bebas Neue", cursive;
@@ -276,6 +276,7 @@ hr {
 
 .error {
   background-color: var(--error);
+  color: #ae7a93 !important;
 }
 
 .flash {
@@ -340,6 +341,7 @@ hr {
 
 .success {
   background-color: var(--success);
+  color: #796c5c !important;
 }
 
 .wp-block-embed__wrapper {

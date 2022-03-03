@@ -1,16 +1,21 @@
-// import Shannon from "../../assets/images/shannon-about.png";
-// import Title from "../../components/Title/Title";
-// import ArticlesLoader from "../../components/ArticlesLoader/ArticlesLoader.js";
+import { useEffect, useState } from "react";
+import Shannon from "../../assets/images/shannon-about.png";
+import Title from "../../components/Title/Title";
+import ArticlesLoader from "../../components/ArticlesLoader/ArticlesLoader.js";
+import { findPage } from "../../services/pagesAPI";
 import "./About.css";
 
 const About = () => {
-  // const { data: bio, isLoading, isSuccess, error } = useFindPageByidQuery(42);
+  const [about, setAbout] = useState([]);
+  useEffect(() => {
+    findPage(42).then((data) => {
+      setAbout(data);
+    });
+  }, []);
+
   return (
     <section className="About" id="about">
-      <p>About test</p>
-      {/* {error && <>Oh no, there was an error</>}
-      {isLoading && <ArticlesLoader />}
-      {isSuccess ? (
+      {about.length !== 0 ? (
         <>
           <div className="shannon">
             <img src={Shannon} className="shannon-image" alt="moi" />
@@ -26,13 +31,13 @@ const About = () => {
               }
               social={true}
             />
-            <p dangerouslySetInnerHTML={{ __html: bio?.content.rendered }}></p>
+            <p dangerouslySetInnerHTML={{ __html: about?.content.rendered }}></p>
             <button>Télécharger mon CV</button>
           </div>
         </>
       ) : (
-        ""
-      )} */}
+        <ArticlesLoader />
+      )}
     </section>
   );
 };
