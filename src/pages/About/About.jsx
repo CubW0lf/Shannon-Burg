@@ -7,6 +7,7 @@ const About = () => {
   // const { data: bio, isLoading, isSuccess, error } = useFindPageByidQuery(42);
   return (
     <section className="About" id="about">
+      <p>About</p>
       {/* {error && <>Oh no, there was an error</>}
       {isLoading && <ArticlesLoader />}
       {isSuccess ? (
