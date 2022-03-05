@@ -1,50 +1,52 @@
 .Skill {
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    opacity: 0;
-    height: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  opacity: 0;
+  height: 100%;
 }
 
 .Skill svg {
-    color: var(--secondary);
-    fill: var(--secondary);
-    stroke: var(--secondary);
-    font-size: 2.7rem;
+  color: var(--secondary);
+  fill: var(--secondary);
+  stroke: var(--secondary);
+  font-size: 2.7rem;
+  margin-bottom: 1vh;
 }
 
 .Skill svg path {
-    stroke: var(--secondary);
-    font-size: 2.7rem;
+  stroke: var(--secondary);
+  font-size: 2.7rem;
 }
 
 .Skill h2 {
-    font-family: var(--font);
-    color: var(--secondary);
-    font-size: 2.2rem;
-    font-weight: 400;
-    text-align: center;
+  font-family: bebas-neue-pro;
+  color: var(--secondary);
+  font-size: 2.5vw;
+  font-weight: var(--titleFont);
+  text-align: center;
+  margin-bottom: 1vh;
 }
 
 .Skill p {
-    text-align: justify;
-    font-size: 1.4rem;
-    font-weight: 300;
+  text-align: justify;
+  font-size: 1.4rem;
+  font-weight: 300;
 }
 
 .Skill.active {
-    animation: 0.4s ease-out forwards store;
+  animation: 0.4s ease-out forwards store;
 }
 
 @keyframes store {
-    from {
-        transform: scaleY(0);
-        opacity: 0;
-    }
-    to {
-        transform: scaleY(1);
-        opacity: 1;
-    }
+  from {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
 }

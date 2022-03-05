@@ -1,143 +1,150 @@
 .Home {
-    background-image: url("../../assets/images/home.png");
-    background-size: cover;
-    padding: 20vh 5vw 0 5vw;
-    position: relative;
-    overflow: hidden;
+  background-image: url("../../assets/images/home.png");
+  background-size: cover;
+  padding: 20vh 5vw 0 5vw;
+  position: relative;
+  overflow: hidden;
 }
 
 .Home .transition {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 20vh;
-    width: 100%;
-    background-color: var(--body);
-    clip-path: polygon(0 30%, 100% 0, 100% 100%, 0% 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 20vh;
+  width: 100%;
+  background-color: var(--body);
+  clip-path: polygon(0 30%, 100% 0, 100% 100%, 0% 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .Home h2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    color: var(--secondary);
-    font-weight: 100;
-    font-size: 20vw;
-    line-height: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: var(--secondary);
+  font-weight: 100;
+  font-size: 20vw;
+  line-height: 1;
 }
 
 .Home .citations {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.Home .citations h2 {
+  font-family: bebas-neue-pro;
+  font-weight: var(--sliderFont);
+  text-transform: uppercase;
 }
 
 .Home .citations q {
-    text-transform: uppercase;
-    font-weight: 300;
-    font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 1rem;
 }
 
 .Home .citations cite {
-    text-transform: uppercase;
-    font-weight: 500;
-    font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
 .Home .welcome {
-    color: var(--white);
-    font-family: var(--titleFont);
-    font-size: 6rem;
-    line-height: 0.5;
-    margin-bottom: 2.5vh;
+  color: var(--white);
+  font-family: bebas-neue-pro;
+  font-weight: var(--homeFont);
+  text-transform: uppercase;
+  font-size: 7vw;
+  line-height: 0.5;
+  margin-bottom: 2.5vh;
 }
 
 .Home .Typewriter {
-    font-family: var(--titleFont);
-    line-height: 100%;
-    font-size: 0.6em;
-    width: 100%;
-    margin-left: 1vw;
-    color: var(--primary);
+  font-family: var(--titleFont);
+  line-height: 100%;
+  font-size: 0.6em;
+  width: 100%;
+  color: var(--primary);
 }
 
 .Home .shannon {
-    height: 60vh;
-    width: 100%;
-    background-image: url("../../assets/images/shannon.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    position: absolute;
-    bottom: 10vh;
+  height: 60vh;
+  width: 100%;
+  background-image: url("../../assets/images/shannon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: absolute;
+  bottom: 10vh;
 }
 
 .Home .portfolio-link {
-    bottom: 0;
-    left: 50%;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: var(--secondary);
-    z-index: 3;
-    font-family: var(--titleFont);
-    font-size: 1.3em;
-    transform: translate(-50%, -12vh) rotate(-6deg);
-    background-color: var(--body);
-    padding: 0.5rem 1rem 0 1rem;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    text-align: center;
+  bottom: 0;
+  left: 50%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--secondary);
+  z-index: 3;
+  font-family: var(--titleFont);
+  font-size: 1.3em;
+  transform: translate(-50%, -12vh) rotate(-6deg);
+  background-color: var(--body);
+  padding: 0.5rem 1rem 0 1rem;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  text-align: center;
 }
 
 @media screen and (min-width: 1200px) {
-    .Home {
-        padding: auto;
-    }
+  .Home {
+    padding: auto;
+  }
 
-    .Home .transition {
-        height: 30vh;
-    }
+  .Home .transition {
+    height: 30vh;
+  }
 
-    .Home h2 {
-        font-size: 5.5vw;
-    }
+  .Home h2 {
+    font-size: 5.5vw;
+  }
 
-    .Home .citations {
-        position: absolute;
-        width: 70vw;
-        top: 20vh;
-        left: 5vw;
-    }
+  .Home .citations {
+    position: absolute;
+    width: 70vw;
+    top: 20vh;
+    left: 5vw;
+  }
 
-    .Home .citations q,
-    .Home .citations cite {
-        font-size: 1.5rem;
-    }
+  .Home .citations q,
+  .Home .citations cite {
+    font-size: 1.5rem;
+  }
 
-    .Home .shannon {
-        height: 100vh;
-        width: 60vw;
-        background-position: bottom 25vh right -5vw;
-        position: absolute;
-        right: 0;
-        top: 0;
-        transform: translateY(5vh);
-    }
+  .Home .shannon {
+    height: 100vh;
+    width: 60vw;
+    background-position: bottom 25vh right -5vw;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateY(5vh);
+  }
 
-    .Home .portfolio-link {
-        left: 50%;
-        font-size: 2rem;
-        transform: translate(-50%, -25vh) rotate(-3deg);
-    }
+  .Home .portfolio-link {
+    left: 50%;
+    font-size: 2rem;
+    transform: translate(-50%, -25vh) rotate(-3deg);
+  }
 }

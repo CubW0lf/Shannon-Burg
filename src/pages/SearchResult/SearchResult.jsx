@@ -1,15 +1,16 @@
 import { Link } from "react-router-dom";
 import { useContext, useEffect } from "react";
-import axios from "axios";
 import { PostContext } from "../../contexts/PostContext";
 import ArticleCard from "../../components/ArticleCard/ArticleCard";
 import "./SearchResult.css";
+import { searchPost } from "../../services/articlesAPI";
 
 const SearchResult = () => {
   const { search, result, setResult } = useContext(PostContext);
+  console.log(result);
 
   useEffect(() => {
-    axios.get(`https://wp.shannonburg.fr/wp-json/wp/v2/search?search=${search}&_embed`).then(({ data }) => {
+    searchPost(search).then((data) => {
       setResult(data);
     });
   }, [search, setResult]);

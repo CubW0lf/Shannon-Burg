@@ -1,141 +1,155 @@
 .Softwares {
-    background: url("../../assets/images/skill-bg-reapeat.png");
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding-top: 10vh;
+  background: url("../../assets/images/skill-bg-reapeat.png");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 10vh;
 }
 
 .Softwares .section-container {
-    width: 100%;
-    padding: 5vw;
+  width: 100%;
+  padding: 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.Softwares .title-container {
+  width: 100%;
+}
+
+.Softwares .softwares-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+}
+
+.Softwares .citation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-image: url("../../assets/images/softwares-bg.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: bottom center;
+  height: 50vh;
+  padding: 5vw;
+}
+
+.Softwares .citation span {
+  font-size: 3rem;
+  line-height: 1;
+  text-align: center;
+  color: var(--white);
+  font-family: var(--citeFont);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Softwares .citation .pink {
+  color: var(--secondary);
+  font-size: 5vw;
+  margin-bottom: 2vh;
+}
+
+.Softwares .citation .left {
+  margin-right: 2vw;
+}
+
+.Softwares .citation .right {
+  margin-left: 2vw;
+}
+
+.Softwares .citation span svg {
+  font-size: 7rem;
+  color: var(--secondary);
+}
+
+.Softwares .mouse {
+  height: 3rem;
+  width: 1rem;
+  border: 2px solid var(--white);
+  border-radius: 70px 70px 70px 70px;
+  position: relative;
+  opacity: 0.9;
+  position: absolute;
+  animation: 1s ease-in-out alternate infinite mouse-down;
+  animation-delay: 0.5s;
+}
+
+.Softwares .mouse .scroll {
+  height: 0.7rem;
+  width: 0.2rem;
+  border-radius: 70px 70px 70px 70px;
+  background-color: var(--white);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  animation: 1s ease-in-out alternate infinite scroll-down;
+}
+
+@media screen and (min-width: 1200px) {
+  .Softwares .section-container {
+    width: 90%;
+    padding: 0;
+    padding-bottom: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-}
+  }
 
-.Softwares .title-container {
-    width: 100%;
-}
-
-.Softwares .softwares-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  .Softwares .softwares-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: auto;
     width: 100%;
     padding-top: 3vh;
     padding-bottom: 3vh;
-}
+  }
 
-.Softwares .citation {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background-image: url("../../assets/images/softwares-bg.png");
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: bottom center;
-    height: 50vh;
-    padding: 5vw;
-}
+  .Softwares .citation {
+    margin-top: 5vh;
+  }
 
-.Softwares .citation span {
+  .Softwares .citation span {
     font-size: 3rem;
-    line-height: 1;
-    text-align: center;
-    color: var(--white);
-    font-family: var(--titleFont);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+  }
 
-.Softwares .citation span svg {
-    font-size: 7rem;
-    color: var(--secondary);
-}
+  .Softwares .mouse {
+    height: 6rem;
+    width: 3rem;
+  }
 
-.Softwares .mouse {
-    height: 3rem;
-    width: 2rem;
-    border: 2px solid var(--white);
-    border-radius: 43%;
-    position: relative;
-    opacity: 0.9;
-    margin-top: 2rem;
-    animation: 1s ease-in-out alternate infinite mouse-down;
-    animation-delay: 0.5s;
-}
-
-.Softwares .mouse .scroll {
-    height: 0.7rem;
-    width: 0.2rem;
-    border-radius: 50%;
-    background-color: var(--white);
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    animation: 1s ease-in-out alternate infinite scroll-down;
-}
-
-@media screen and (min-width: 1200px) {
-    .Softwares .section-container {
-        width: 90%;
-        padding: 0;
-        padding-bottom: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-    }
-
-    .Softwares .softwares-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        height: auto;
-        width: 100%;
-        padding-top: 3vh;
-        padding-bottom: 3vh;
-    }
-
-    .Softwares .citation {
-        margin-top: 5vh;
-    }
-
-    .Softwares .citation span {
-        font-size: 3rem;
-    }
-
-    .Softwares .mouse {
-        height: 6rem;
-        width: 4rem;
-    }
-
-    .Softwares .mouse .scroll {
-        height: 1.3rem;
-    }
+  .Softwares .mouse .scroll {
+    height: 1.3rem;
+  }
 }
 
 @keyframes scroll-down {
-    from {
-        transform: translate(-50%, 50%);
-    }
-    to {
-        transform: translate(-50%, 90%);
-    }
+  from {
+    transform: translate(-50%, 50%);
+  }
+  to {
+    transform: translate(-50%, 90%);
+  }
 }
 
 @keyframes mouse-down {
-    from {
-        transform: translate(0, 50%);
-    }
-    to {
-        transform: translate(0, 60%);
-    }
+  from {
+    transform: translate(0, 50%);
+  }
+  to {
+    transform: translate(0, 60%);
+  }
 }

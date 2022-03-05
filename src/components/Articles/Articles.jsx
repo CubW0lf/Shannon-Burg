@@ -7,6 +7,7 @@ import "./Articles.css";
 
 const Articles = () => {
   const { posts, error, isLoading } = useContext(PostContext);
+
   return (
     <>
       {isLoading && <ArticlesLoader />}

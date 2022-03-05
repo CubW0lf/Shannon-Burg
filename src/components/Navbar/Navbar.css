@@ -1,142 +1,146 @@
 .Navbar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: var(--white);
-    width: 100%;
-    position: fixed;
-    z-index: 6;
-    background: var(--author);
-    height: 10vh;
-    filter: drop-shadow(0 0 2px black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  width: 100%;
+  position: fixed;
+  z-index: 6;
+  background: var(--author);
+  height: 10vh;
+  filter: drop-shadow(0 0 2px black);
 }
 
 .burger {
-    width: 15%;
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    position: relative;
-    z-index: 6;
+  width: 15%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  z-index: 6;
 }
 
 .burger.cross div {
-    background-color: var(--secondary);
+  background-color: var(--secondary);
 }
 
 .burger.cross .line1 {
-    top: 50%;
-    transform: translateY(-50%) rotate(45deg);
-    transition: top 0.4s ease-in-out, bottom 0.4s ease-in-out, transform 0.4s 0.4s ease-in-out,
-        background-color 0.4s ease-in-out, width 0.4s ease-in-out;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  transition: top 0.4s ease-in-out, bottom 0.4s ease-in-out, transform 0.4s 0.4s ease-in-out,
+    background-color 0.4s ease-in-out, width 0.4s ease-in-out;
 }
 
 .burger.cross .line2 {
-    width: 0;
-    transition: width 1s ease-in-out, color 1s ease-in-out, color 0.4s ease-in-out, width 0.4s ease-in-out;
+  width: 0;
+  transition: width 1s ease-in-out, color 1s ease-in-out, color 0.4s ease-in-out, width 0.4s ease-in-out;
 }
 
 .burger.cross .line3 {
-    bottom: 50%;
-    transform: translateY(50%) rotate(-45deg);
-    transition: top 0.4s ease-in-out, bottom 0.4s ease-in-out, transform 0.4s 0.4s ease-in-out,
-        background-color 0.4s ease-in-out, width 0.4s ease-in-out;
+  bottom: 50%;
+  transform: translateY(50%) rotate(-45deg);
+  transition: top 0.4s ease-in-out, bottom 0.4s ease-in-out, transform 0.4s 0.4s ease-in-out,
+    background-color 0.4s ease-in-out, width 0.4s ease-in-out;
 }
 
 .burger .line1,
 .burger .line2,
 .burger .line3 {
-    width: 100%;
-    height: 5px;
-    border-radius: 5px;
-    background-color: var(--white);
-    position: absolute;
-    transform: translateY(0) rotate(0);
-    transition: transform 0.4s ease-in-out, top 0.4s 0.4s ease-in-out, bottom 0.4s 0.4s ease-in-out,
-        background-color 0.4s ease-in-out, width 0.4s 0.4s ease-in-out;
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;
+  background-color: var(--white);
+  position: absolute;
+  transform: translateY(0) rotate(0);
+  transition: transform 0.4s ease-in-out, top 0.4s 0.4s ease-in-out, bottom 0.4s 0.4s ease-in-out,
+    background-color 0.4s ease-in-out, width 0.4s 0.4s ease-in-out;
 }
 
 .burger .line1 {
-    top: 10%;
+  top: 10%;
 }
 
 .burger .line3 {
-    bottom: 10%;
+  bottom: 10%;
 }
 
 .menu {
-    position: fixed;
-    z-index: 5;
-    top: -100%;
-    width: 100%;
-    background: rgb(27, 24, 32, 0.98);
-    transition: all 1s;
+  position: fixed;
+  z-index: 5;
+  top: -100%;
+  width: 100%;
+  background: rgb(27, 24, 32, 0.98);
+  transition: all 1s;
 }
 
 .menu.active {
-    top: 10vh;
-    transition: all 1s;
+  top: 10vh;
+  transition: all 1s;
 }
 
 .menu ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu ul a {
-    width: 100vw;
+  width: 100vw;
 }
 
 .menu ul a li {
-    width: 100%;
-    font-size: 1.8rem;
-    height: 10vh;
-    color: var(--primary);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
+  width: 100%;
+  font-size: 1.8rem;
+  height: 10vh;
+  color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
 }
 
 .menu ul a:nth-child(odd) {
-    background-color: rgba(70, 63, 85, 0.5);
+  background-color: rgba(70, 63, 85, 0.5);
 }
 
 @media screen and (min-width: 1200px) {
-    .menu.active {
-        display: none;
-    }
+  .menu.active {
+    display: none;
+  }
 
-    .Navbar {
-        flex-direction: row;
-        height: 7vh;
-        background: rgba(66, 55, 58, 0.5);
-        filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
-    }
+  .Navbar {
+    flex-direction: row;
+    height: 7vh;
+    background: rgba(66, 55, 58, 0.5);
+    filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+  }
 
-    .Navbar ul {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-    }
+  .Navbar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
 
-    .Navbar ul li {
-        list-style-type: none;
-        font-family: var(--titleFont);
-        font-size: 3vh;
-        margin-left: 1vw;
-        margin-right: 1vw;
-        text-align: center;
-    }
+  .Navbar ul li {
+    list-style-type: none;
+    font-family: bebas-neue-pro;
+    font-weight: var(--titleFont);
+    text-transform: uppercase;
+    font-size: 3vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    text-align: center;
+  }
 
-    .Navbar .logo {
-        height: 6vh;
-    }
+  .Navbar .logo {
+    height: 6vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+  }
 }

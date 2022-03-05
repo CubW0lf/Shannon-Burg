@@ -10,7 +10,9 @@
 .Software .software-name {
   color: var(--white);
   font-size: 2rem;
-  font-family: var(--titleFont);
+  font-family: bebas-neue-pro;
+  font-weight: var(--titleFont);
+  text-transform: uppercase;
 }
 
 .Software .level-container {

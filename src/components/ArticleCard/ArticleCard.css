@@ -1,74 +1,74 @@
 .Article {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    border-radius: 5px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 }
 
 .Article .info-store {
-    width: 100%;
-    height: auto;
-    z-index: 2;
-    display: flex;
-    flex-direction: column-reverse;
-    text-align: center;
-    padding: 2vh;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--bodyDark);
+  width: 100%;
+  height: auto;
+  z-index: 2;
+  display: flex;
+  flex-direction: column-reverse;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bodyDark);
+  padding: 1vw;
 }
 
 .Article h3 {
-    color: var(--primary);
-    z-index: 3;
-    position: relative;
+  color: var(--primary);
+  z-index: 3;
+  position: relative;
+  font-family: bebas-neue-pro;
+  font-weight: var(--titleFont);
 }
 
 .Article .date {
-    color: var(--white);
-    z-index: 3;
-    position: relative;
+  color: var(--white);
+  z-index: 3;
+  position: relative;
 }
 
 @media screen and (min-width: 1200px) {
-    .Article .info-store {
-        transform: translateY(-101%);
-        background-color: rgba(0, 0, 0, 0.7);
-        height: 100%;
-        flex-direction: column;
-        padding: 0;
-    }
+  .Article .info-store {
+    transform: translateY(-101%);
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    flex-direction: column;
+  }
 
-    .Article:hover .info-store {
-        animation: 1s ease-out forwards info-store;
-    }
+  .Article:hover .info-store {
+    animation: 1s ease-out forwards info-store;
+  }
 
-    .Article h3 {
-        color: var(--primary);
-        z-index: 3;
-        position: relative;
-    }
+  .Article h3 {
+    color: var(--primary);
+    z-index: 3;
+    position: relative;
+  }
 
-    .Article .date {
-        color: var(--white);
-        z-index: 3;
-        position: relative;
-    }
+  .Article .date {
+    color: var(--white);
+    z-index: 3;
+    position: relative;
+  }
 }
 
 @keyframes info-store {
-    from {
-        opacity: 0;
-        transform: translateY(-100%);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
