@@ -1,9 +1,9 @@
 import { useRef, useContext, useState } from "react";
+import { uxContext } from "../../contexts/uxContext";
+import emailjs from "emailjs-com";
 import Title from "../../components/Title/Title";
 import shannon from "../../assets/images/shannon_contact.png";
 import "./Contact.css";
-import emailjs from "emailjs-com";
-import { uxContext } from "../../contexts/uxContext";
 
 const Contact = () => {
   const [pseudo, setPseudo] = useState("");
@@ -49,7 +49,7 @@ const Contact = () => {
             type="email"
             name="user_email"
             id="user_email"
-            placeholder="ton adresse mail ultra secrète"
+            placeholder="Ton adresse mail ultra secrète"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />

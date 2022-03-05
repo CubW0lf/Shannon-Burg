@@ -1,49 +1,48 @@
 .Software {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 100%;
-    margin-bottom: 3vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 3vh;
 }
 
 .Software .software-name {
-    color: var(--white);
-    font-size: 2rem;
-    font-family: var(--titleFont);
+  color: var(--white);
+  font-size: 2rem;
+  font-family: var(--titleFont);
 }
 
 .Software .level-container {
-    background-color: var(--white);
-    height: 0.7rem;
-    border-radius: 25px;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5) inset;
-    width: 100%;
-    outline: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: var(--white);
+  height: 0.7rem;
+  border-radius: 25px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5) inset;
+  width: 100%;
 }
 
 .Software .level-container .level {
-    height: 100%;
+  height: 100%;
 }
 
 .Software .level-container .animation.active {
-    background-color: var(--third);
-    height: 100%;
-    border-radius: 25px;
-    animation: 1s ease-in-out grow;
+  background-color: var(--third);
+  height: 100%;
+  border-radius: 25px;
+  animation: 1s ease-in-out grow;
 }
 
 @media screen and (min-width: 1200px) {
-    .Software {
-        width: 90%;
-    }
+  .Software {
+    width: 90%;
+  }
 }
 
 @keyframes grow {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }

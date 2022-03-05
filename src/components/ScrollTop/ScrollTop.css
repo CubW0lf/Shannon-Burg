@@ -1,0 +1,34 @@
+.ScrollTop {
+  position: fixed;
+  bottom: 5vh;
+  right: 5vh;
+  background-color: var(--secondary);
+  border-radius: 50%;
+  width: 4vw;
+  height: 4vw;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.ScrollTop:hover {
+  background-color: #ae7a93;
+}
+
+.ScrollTop svg {
+  color: var(--white);
+  font-size: 3vw;
+}
+
+.ScrollTop.visible {
+  opacity: 1;
+  transition: all 1s;
+}
+
+.ScrollTop.not-visible {
+  opacity: 0;
+  transition: all 1s;
+}

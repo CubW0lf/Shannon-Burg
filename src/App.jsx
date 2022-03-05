@@ -9,6 +9,7 @@ import ArticleSingle from "./pages/ArticleSingle/ArticleSingle";
 import Home from "./pages/Home/Home";
 import SearchResult from "./pages/SearchResult/SearchResult.jsx";
 import "./App.css";
+import ScrollTop from "./components/ScrollTop/ScrollTop.jsx";
 
 function App() {
   const [categoryId, setCategoryId] = useState(null);
@@ -19,6 +20,28 @@ function App() {
   const [result, setResult] = useState([]);
   const [flash, setFlash] = useState("");
   const [flashType, setFlashType] = useState("");
+  const [visible, setVisible] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (scrollPosition > 200) {
+      setVisible(true);
+    } else {
+      setVisible(false);
+    }
+  }, [scrollPosition]);
 
   useEffect(() => {
     findAllPosts(currentPage, categoryId).then((data) => {
@@ -34,7 +57,6 @@ function App() {
   const handleFlash = (type, message, duration) => {
     setFlash(message);
     setFlashType(type);
-
     setTimeout(deleteFlash, duration);
   };
 
@@ -57,6 +79,7 @@ function App() {
     >
       <uxContext.Provider value={{ handleFlash, flash, flashType }}>
         <div className="App">
+          <ScrollTop visible={visible} />
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
