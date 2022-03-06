@@ -3,8 +3,9 @@ import Socials from "../../components/Socials/Socials";
 import { AiFillTag } from "react-icons/ai";
 import { findPage } from "../../services/pagesAPI";
 import "./ArticleInfos.css";
+import ShareToNetwork from "../ShareToNetwork/ShareToNetwork";
 
-const ArticleInfos = ({ tags }) => {
+const ArticleInfos = ({ tags, id }) => {
   const [bio, setBio] = useState([]);
 
   useEffect(() => {
@@ -29,7 +30,7 @@ const ArticleInfos = ({ tags }) => {
               : "Aucun Tag"}
           </span>
         </div>
-        <Socials />
+        <ShareToNetwork id={id} />
       </div>
       <div className="author">
         <div className="thumbnail" style={{ backgroundImage: `url(${bio.length !== 0 && bio.fimg_url})` }}></div>

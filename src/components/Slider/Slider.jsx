@@ -26,7 +26,7 @@ const Slider = () => {
         spaceBetween={0}
         slidesPerView={3}
         navigation
-        pagination={true}
+        pagination={{ clickable: true }}
         autoplay={{ delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true }}
         className="Slider not-mobile"
       >
@@ -53,8 +53,8 @@ const Slider = () => {
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={0}
         slidesPerView={1}
-        navigation
-        pagination={true}
+        navigation={false}
+        pagination={{ clickable: true }}
         autoplay={{ delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true }}
         className="Slider mobile"
       >

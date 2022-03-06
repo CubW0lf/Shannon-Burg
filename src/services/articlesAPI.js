@@ -29,6 +29,7 @@ export const findPost = (id) =>
 
 export const searchPost = (word) =>
   api
+    .posts()
     .search(word)
     .then((data) => data)
     .catch((err) => "Désolé une erreur est survenue et nous ne pouvons pas retrouver les articles");

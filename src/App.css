@@ -366,7 +366,7 @@ center {
 }
 
 .push {
-  height: 10vh;
+  height: 30vh;
 }
 
 .success {
@@ -377,6 +377,14 @@ center {
 .wp-block-embed__wrapper {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wp-block-embed__wrapper iframe {
+  width: 100% !important;
 }
 
 /* Classes Bootstrapé pour wordpress et pour simplifier */

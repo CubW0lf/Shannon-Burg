@@ -18,7 +18,8 @@
 
 .About .shannon .shannon-image {
   max-width: 100%;
-  height: 55vh;
+  width: 100%;
+  left: 0;
   object-fit: contain;
 }
 
@@ -58,7 +59,7 @@
 
   .About .shannon .shannon-image {
     margin-left: -15vw;
-    height: auto;
+    height: 150vh;
   }
 
   .About .text {

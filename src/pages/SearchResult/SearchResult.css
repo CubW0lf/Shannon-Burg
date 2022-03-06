@@ -1,17 +1,27 @@
 .SearchResult {
   padding: 10vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 3rem;
-}
-
-.SearchResult div {
+  background-color: var(--bodyLight);
+  padding-bottom: 30vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid var(--primary);
-  height: 25rem;
+}
+
+.SearchResult .results-grid {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 3rem;
+  padding-top: 3vh;
+}
+
+.SearchResult .results-grid div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 25vh;
 }
 
 .result {

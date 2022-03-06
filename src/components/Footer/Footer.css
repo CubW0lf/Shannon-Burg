@@ -2,7 +2,7 @@
   background: url("../../assets/images/footer.jpg");
   background-size: cover;
   background-attachment: fixed;
-  height: 40vh;
+  height: 50vh;
   clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
   position: absolute;
   right: 0;
@@ -28,20 +28,20 @@
 
 .Footer .content .quote {
   font-family: var(--citeFont);
-  font-size: 3vw;
+  font-size: 5vw;
   line-height: 1;
   color: var(--white);
 }
 
 .Footer .content .quote span {
   color: var(--secondary);
-  font-size: 10vh;
+  font-size: 7vh;
   line-height: 0.4;
   height: 1vh;
 }
 
 .Footer .content cite {
-  font-size: 1.5vw;
+  font-size: 5vw;
   color: var(--secondary);
   text-transform: uppercase;
   margin-bottom: 2vh;
@@ -56,5 +56,17 @@
   .Footer {
     height: 80vh;
     clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  .Footer .content .quote {
+    font-size: 3vw;
+  }
+
+  .Footer .content .quote span {
+    font-size: 10vh;
+  }
+
+  .Footer .content cite {
+    font-size: 1.5vw;
   }
 }

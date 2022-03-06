@@ -20,7 +20,7 @@
   align-items: center;
   font-family: bebas-neue-pro;
   font-weight: var(--titleFont);
-  font-size: 2vw;
+  font-size: 10vw;
   text-transform: uppercase;
   color: var(--white);
   position: relative;
@@ -61,7 +61,7 @@
 
 .Categories .parent .sub.active {
   transform: scaleY(1);
-  padding-top: 5vh;
+  padding-top: 1vh;
   height: auto;
   opacity: 1;
   transition: all 0.4s ease-in-out, opacity 0.2s;
@@ -76,7 +76,7 @@
   align-items: center;
   margin-bottom: 0.25vh;
   text-transform: uppercase;
-  font-size: 1vw;
+  font-size: 5vw;
   font-family: var(--font);
   cursor: pointer;
   text-align: center;
@@ -96,6 +96,7 @@
     width: 14vw;
     height: 100%;
     margin-bottom: 0;
+    font-size: 2vw;
   }
 
   .Categories .parent .sub {
@@ -146,6 +147,7 @@
     animation: 1s ease-in-out forwards enterLeft;
     transform: translateX(-100%);
     opacity: 0;
+    font-size: 1.2vw;
   }
 
   .Categories .parent:hover .sub li:nth-child(2) {
@@ -162,6 +164,10 @@
 
   .Categories .parent:hover .sub li:nth-child(5) {
     animation-delay: 0.8s;
+  }
+
+  .Categories .parent:hover .sub li:nth-child(6) {
+    animation-delay: 1s;
   }
 
   .Categories .parent .sub.active {

@@ -73,52 +73,58 @@ const ArticleSingle = () => {
       handleFlash("error", "Une erreur est survenue", 3000);
     }
   };
-  console.log(post);
   return (
     <>
       {post.length !== 0 ? (
         <section className="ArticleSingle">
           <Categories />
           <div style={{ backgroundImage: `url(${post.fimg_url})` }} alt="" className="fimg">
-            <Link to={`/article/${post.previous.id}`}>
-              <div className="prev">
-                <BsChevronLeft />
-              </div>
-            </Link>
-            <Link to={`/article/${post.next.id}`}>
-              <div className="next">
-                <BsChevronRight />
-              </div>
-            </Link>
+            {post.previous && (
+              <Link to={`/article/${post.previous.id}`}>
+                <div className="prev">
+                  <BsChevronLeft />
+                </div>
+              </Link>
+            )}
+            {post.next && (
+              <Link to={`/article/${post.next.id}`}>
+                <div className="next">
+                  <BsChevronRight />
+                </div>
+              </Link>
+            )}
           </div>
-          <h1 dangerouslySetInnerHTML={{ __html: post?.title.rendered }}></h1>
-          <hr />
-          <span className="date">Publié le : {dayjs(post?.date).format("DD/MM/YYYY")}</span>
-          <div dangerouslySetInnerHTML={{ __html: post?.content.rendered }} className="content"></div>
-          <ArticleInfos tags={categories} />
-          <ArticleComments post={id} comments={comments} setComments={setComments} handleParent={handleParent} />
-          <Title text={<h2>Laisser un Commentaire</h2>} social={false} />
-          {answerTo !== "" && <p>{answerTo}</p>}
-          <form className="comment-form" onSubmit={handlePostComment}>
-            <input
-              type="text"
-              name=""
-              id=""
-              placeholder="Votre Pseudo"
-              value={pseudo}
-              onChange={(e) => setPseudo(e.target.value)}
-            />
-            <textarea
-              name=""
-              id=""
-              cols="30"
-              rows="10"
-              placeholder="Votre message"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-            ></textarea>
-            <button type="submit">Envoyer</button>
-          </form>
+          <div className="content">
+            <h1 dangerouslySetInnerHTML={{ __html: post?.title.rendered }}></h1>
+            <hr />
+            <span className="date">Publié le : {dayjs(post?.date).format("DD/MM/YYYY")}</span>
+            <div dangerouslySetInnerHTML={{ __html: post?.content.rendered }} className="text"></div>
+
+            <ArticleInfos tags={categories} id={id} />
+            <ArticleComments post={id} comments={comments} setComments={setComments} handleParent={handleParent} />
+            <Title text={<h2>Laisser un Commentaire</h2>} social={false} />
+            {answerTo !== "" && <p>{answerTo}</p>}
+            <form className="comment-form" onSubmit={handlePostComment}>
+              <input
+                type="text"
+                name=""
+                id=""
+                placeholder="Votre Pseudo"
+                value={pseudo}
+                onChange={(e) => setPseudo(e.target.value)}
+              />
+              <textarea
+                name=""
+                id=""
+                cols="30"
+                rows="10"
+                placeholder="Votre message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+              ></textarea>
+              <button type="submit">Envoyer</button>
+            </form>
+          </div>
           {flash !== "" ? <div className={`flash ${flashType !== "" ? flashType : ""}`}>{flash}</div> : ""}
           <div className="push"></div>
         </section>
