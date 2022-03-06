@@ -27,7 +27,7 @@ const Slider = () => {
         slidesPerView={3}
         navigation
         pagination={true}
-        autoplay={{ delay: 1500, disableOnInteraction: false, pauseOnMouseEnter: true }}
+        autoplay={{ delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true }}
         className="Slider not-mobile"
       >
         {latest.length !== 0 ? (
@@ -55,7 +55,7 @@ const Slider = () => {
         slidesPerView={1}
         navigation
         pagination={true}
-        autoplay={{ delay: 1500, disableOnInteraction: false, pauseOnMouseEnter: true }}
+        autoplay={{ delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true }}
         className="Slider mobile"
       >
         {latest.length !== 0 ? (
