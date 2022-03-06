@@ -4,23 +4,31 @@
   right: 5vh;
   background-color: var(--secondary);
   border-radius: 50%;
-  width: 4vw;
-  height: 4vw;
+  width: 20vw;
+  height: 20vw;
   z-index: 6;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: all 1s;
 }
 
 .ScrollTop:hover {
   background-color: #ae7a93;
+  transition: all 1s;
+}
+
+.ScrollTop:hover svg {
+  color: var(--white);
+  transition: all 1s;
 }
 
 .ScrollTop svg {
-  color: var(--white);
-  font-size: 3vw;
+  color: #ae7a93;
+  font-size: 10vw;
+  transition: all 1s;
 }
 
 .ScrollTop.visible {
@@ -31,4 +39,15 @@
 .ScrollTop.not-visible {
   opacity: 0;
   transition: all 1s;
+}
+
+@media screen and (min-width: 1200px) {
+  .ScrollTop {
+    width: 4vw;
+    height: 4vw;
+  }
+
+  .ScrollTop svg {
+    font-size: 2.5vw;
+  }
 }

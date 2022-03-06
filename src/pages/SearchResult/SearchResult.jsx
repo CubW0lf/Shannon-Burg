@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { PostContext } from "../../contexts/PostContext";
-import ArticleCard from "../../components/ArticleCard/ArticleCard";
 import "./SearchResult.css";
 import { searchPost } from "../../services/articlesAPI";
 
@@ -19,8 +18,8 @@ const SearchResult = () => {
     <section className="SearchResult">
       {result.length !== 0 &&
         result.map((p) => (
-          <Link key={p.id} to={`/article/${p.id}`}>
-            <ArticleCard />
+          <Link key={p.id} to={`/article/${p.id}`} className="result">
+            <span dangerouslySetInnerHTML={{ __html: p.title }}></span>
           </Link>
         ))}
     </section>

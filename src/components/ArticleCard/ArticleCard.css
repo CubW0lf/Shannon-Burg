@@ -9,6 +9,8 @@
   z-index: 1;
   overflow: hidden;
   filter: saturate(80%);
+  background-size: "cover";
+  background-position: center;
 }
 
 .Article .info-store {

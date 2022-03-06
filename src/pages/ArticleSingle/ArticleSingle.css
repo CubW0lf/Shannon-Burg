@@ -5,6 +5,58 @@
   padding-top: calc(10vh + 5vw);
 }
 
+.ArticleSingle .fimg {
+  height: 40vh;
+  width: 100vw;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  position: relative;
+  left: -5.5vw;
+}
+
+.ArticleSingle .fimg .prev,
+.ArticleSingle .fimg .next {
+  position: fixed;
+  height: 10vh;
+  width: 3vw;
+  top: 50%;
+  border-radius: 0;
+  background-color: var(--secondary);
+  color: #ae7a93;
+  font-size: 5vh;
+  opacity: 0.6;
+  transition: all 1s;
+  z-index: 10;
+}
+
+.ArticleSingle .fimg .prev:hover,
+.ArticleSingle .fimg .next:hover {
+  opacity: 1;
+  transition: all 1s;
+}
+
+.ArticleSingle .fimg .prev:hover {
+  transform: translateX(0);
+}
+
+.ArticleSingle .fimg .prev {
+  left: 0;
+  transform: translateX(-50%);
+}
+
+.ArticleSingle .fimg .next {
+  right: 0;
+  transform: translateX(50%);
+}
+
+.ArticleSingle .fimg .next:hover {
+  right: 0;
+  transform: translateX(0);
+}
+
 .ArticleSingle .date {
   color: var(--input);
   position: relative;

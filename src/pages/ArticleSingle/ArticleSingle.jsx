@@ -3,12 +3,15 @@ import dayjs from "dayjs";
 import { useState, useContext, useEffect } from "react";
 import { uxContext } from "../../contexts/uxContext.js";
 import { useParams } from "react-router-dom";
+import Categories from "../../components/Categories/Categories";
 import ArticleComments from "../../components/ArticleComments/ArticleComments";
 import ArticleInfos from "../../components/ArticleInfos/ArticleInfos";
 import Title from "../../components/Title/Title.jsx";
 import ArticlesLoader from "../../components/ArticlesLoader/ArticlesLoader.js";
 import { findPost } from "../../services/articlesAPI.js";
 import { findCategory } from "../../services/categoriesAPI.js";
+import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
+import { Link } from "react-router-dom";
 import "./ArticleSingle.css";
 
 const ArticleSingle = () => {
@@ -70,10 +73,24 @@ const ArticleSingle = () => {
       handleFlash("error", "Une erreur est survenue", 3000);
     }
   };
+  console.log(post);
   return (
     <>
       {post.length !== 0 ? (
         <section className="ArticleSingle">
+          <Categories />
+          <div style={{ backgroundImage: `url(${post.fimg_url})` }} alt="" className="fimg">
+            <Link to={`/article/${post.previous.id}`}>
+              <div className="prev">
+                <BsChevronLeft />
+              </div>
+            </Link>
+            <Link to={`/article/${post.next.id}`}>
+              <div className="next">
+                <BsChevronRight />
+              </div>
+            </Link>
+          </div>
           <h1 dangerouslySetInnerHTML={{ __html: post?.title.rendered }}></h1>
           <hr />
           <span className="date">Publié le : {dayjs(post?.date).format("DD/MM/YYYY")}</span>

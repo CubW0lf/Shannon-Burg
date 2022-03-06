@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Shannon from "../../assets/images/shannon-about.png";
+import Shannon from "../../assets/images/shannon_about.png";
 import Title from "../../components/Title/Title";
 import ArticlesLoader from "../../components/ArticlesLoader/ArticlesLoader.js";
 import { findPage } from "../../services/pagesAPI";
@@ -31,8 +31,10 @@ const About = () => {
               }
               social={true}
             />
-            <p dangerouslySetInnerHTML={{ __html: about?.content.rendered }}></p>
-            <button>Télécharger mon CV</button>
+            <div className="content-container">
+              <p dangerouslySetInnerHTML={{ __html: about?.content.rendered }}></p>
+              <button>Télécharger mon CV</button>
+            </div>
           </div>
         </>
       ) : (

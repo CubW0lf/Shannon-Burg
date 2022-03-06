@@ -1,18 +1,26 @@
 .Socials {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: auto;
 }
 
 .Socials svg {
-    font-size: 1.5rem;
-    color: var(--primary);
-    margin-left: 3vw;
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-left: 3vw;
+  transform: scale(1);
+  transition: all 1s;
+}
+
+.Socials svg:hover {
+  color: var(--secondary);
+  transform: scale(1.4);
+  transition: all 1s;
 }
 
 @media screen and (min-width: 1200px) {
-    .Socials svg {
-        margin-left: 2rem;
-    }
+  .Socials svg {
+    margin-left: 2rem;
+  }
 }

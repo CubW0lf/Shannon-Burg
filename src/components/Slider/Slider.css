@@ -81,3 +81,9 @@
   left: auto !important;
   right: 0 !important;
 }
+
+.swiper-pagination-bullet {
+  background: var(--white) !important;
+  width: 1.5vh !important;
+  height: 1.5vh !important;
+}

@@ -41,6 +41,30 @@
   animation: 0.4s ease-out forwards store;
 }
 
+.Skill:nth-child(2).active {
+  animation-delay: 0.4s;
+}
+
+.Skill:nth-child(3).active {
+  animation-delay: 0.6s;
+}
+
+.Skill:nth-child(5).active {
+  animation-delay: 0.4s;
+}
+
+.Skill:nth-child(6).active {
+  animation-delay: 0.6s;
+}
+
+.Skill:nth-child(8).active {
+  animation-delay: 0.4s;
+}
+
+.Skill:nth-child(9).active {
+  animation-delay: 0.6s;
+}
+
 @keyframes store {
   from {
     transform: scaleY(0);

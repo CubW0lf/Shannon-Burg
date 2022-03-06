@@ -1,5 +1,5 @@
 .Softwares {
-  background: url("../../assets/images/skill-bg-reapeat.png");
+  background: url("../../assets/images/skill-bg-repeat.jpg");
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -37,7 +37,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-image: url("../../assets/images/softwares-bg.png");
+  background-image: url("../../assets/images/softwares-bg.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-position: bottom center;

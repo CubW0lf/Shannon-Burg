@@ -1,3 +1,12 @@
+.tags {
+  text-transform: uppercase;
+}
+
 .tag {
   margin-right: 1vw;
+}
+
+.text h3 {
+  font-family: bebas-neue-pro;
+  font-weight: var(--titleFont);
 }

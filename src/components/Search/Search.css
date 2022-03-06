@@ -1,82 +1,90 @@
 @media screen and (min-width: 1200px) {
-    .Search {
-        position: absolute;
-        right: calc(-20vw - 5vh);
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        height: 100%;
-        transition: all 1s ease-in-out;
-    }
+  .Search {
+    position: absolute;
+    right: calc(-21vw - 5vh);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    transition: all 1s ease-in-out;
+  }
 
-    .Search form {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        transition: all 1s;
-        position: relative;
-    }
+  .Search form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transition: all 1s;
+    position: relative;
+  }
 
-    .Search .cursor {
-        width: 1px;
-        height: 70%;
-        left: 1vw;
-        background-color: var(--bodyDark);
-        position: absolute;
-        animation: 1s ease-in-out infinite blink;
-    }
+  .Search .cursor {
+    width: 1px;
+    height: 70%;
+    left: 1vw;
+    background-color: var(--bodyDark);
+    position: absolute;
+    animation: 1s ease-in-out infinite blink;
+  }
 
-    .Search input[type="text"]:focus + .cursor {
-        display: none;
-    }
+  .Search input[type="text"]:focus + .cursor {
+    display: none;
+  }
 
-    .Search form button[type="submit"] {
-        height: 7vh;
-        width: 5vh;
-        padding-right: 1vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: 0;
-        border-radius: 0;
-        color: var(--bodyDark);
-        background-color: var(--input);
-    }
+  .Search form button[type="submit"] {
+    height: 7vh;
+    width: 7vh;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    border-radius: 0;
+    color: var(--bodyDark);
+    background-color: var(--input);
+  }
 
-    .Search input[type="text"]:focus {
-        color: var(--bodyDark);
-        background: var(--input);
-    }
+  .Search form button[type="submit"] svg {
+    font-size: 3vh;
+    padding: 0;
+  }
 
-    .Search.active {
-        right: 0;
-        transition: all 1s ease-in-out;
-    }
+  .Search input[type="text"]:focus {
+    color: var(--bodyDark);
+    background: var(--input);
+  }
 
-    .Search .toggle {
-        cursor: pointer;
-        height: 7vh;
-        width: 7vh;
-        padding: 1.5vh;
-        background-color: var(--secondary);
-        color: #ae7a93;
-    }
+  .Search.active {
+    right: 0;
+    transition: all 1s ease-in-out;
+  }
 
-    .Search input[type="text"] {
-        margin-bottom: 0;
-        height: 100%;
-        width: 20vw;
-        padding-left: 1vw;
-    }
+  .Search .toggle {
+    cursor: pointer;
+    height: 7vh;
+    width: 7vh;
+    padding: 1.5vh;
+    background-color: var(--secondary);
+    color: #ae7a93;
+  }
+
+  .Search input[type="text"] {
+    margin-bottom: 0;
+    height: 100%;
+    width: 20vw;
+    padding-left: 1vw;
+    font-family: bebas-neue-pro;
+    font-size: 2vw;
+    text-transform: uppercase;
+  }
 }
 
 @keyframes blink {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

@@ -136,6 +136,13 @@
     margin-left: 1vw;
     margin-right: 1vw;
     text-align: center;
+    color: var(--white);
+    transition: all 1s;
+  }
+
+  .Navbar ul li:hover {
+    color: var(--secondary);
+    transition: all 1s;
   }
 
   .Navbar .logo {

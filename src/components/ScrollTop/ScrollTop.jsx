@@ -1,4 +1,4 @@
-import { BsChevronUp } from "react-icons/bs";
+import { FaChevronUp } from "react-icons/fa";
 import "./ScrollTop.css";
 
 const ScrollTop = ({ visible }) => {
@@ -7,7 +7,7 @@ const ScrollTop = ({ visible }) => {
   };
   return (
     <div className={`ScrollTop ${visible ? "visible" : "not-visible"}`} onClick={toTop}>
-      <BsChevronUp />
+      <FaChevronUp />
     </div>
   );
 };

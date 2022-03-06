@@ -110,11 +110,18 @@
     height: auto;
     transform: scaleY(1);
   }
+
   .Categories .parent span {
     background-color: transparent;
     color: var(--white);
     width: auto;
     text-align: center;
+    transition: all 1s;
+  }
+
+  .Categories .parent:hover span {
+    color: var(--secondary);
+    transition: all 1s;
   }
 
   .Categories .parent:hover .sub {
@@ -131,8 +138,8 @@
     height: 1rem;
     background-color: #4c4860;
     margin-bottom: 1rem;
-
     clip-path: polygon(0 0, 100% 0, 50% 100%);
+    animation: 1s ease-in-out forwards enterLeft;
   }
 
   .Categories .parent:hover .sub li {

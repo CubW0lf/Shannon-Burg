@@ -23,6 +23,7 @@ export const findPost = (id) =>
   api
     .posts()
     .id(id)
+    .perPage(1)
     .then((data) => data)
     .catch((err) => "Désolé une erreur est survenue et nous ne pouvons pas retrouver les articles");
 

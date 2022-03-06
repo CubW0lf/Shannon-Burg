@@ -1,20 +1,32 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Footer.css";
 
 const Footer = () => {
-    return (
-        <footer className="Footer">
-            <div className="content">
-                <q>Rêve ta vie en couleur, c'est le secret du bonheur</q>
-                <cite>Walt Disney</cite>
-                <hr />
-                <div className="bottom">
-                    <div className="infos"></div>
-                    <div className="legal"></div>
-                </div>
-            </div>
-        </footer>
-    );
+  return (
+    <footer className="Footer">
+      <div className="content">
+        <span className="quote">
+          <span>&laquo;</span> Rêve ta vie en couleur,
+          <br />
+          c'est le secret du bonheur ! <span>&raquo;</span>
+        </span>
+        <hr />
+        <cite>Walt Disney</cite>
+        <div className="bottom">
+          <div className="infos">
+            COPYRIGHT © 2022 DESIGN ET INTÉGRATION: SHANNON &{" "}
+            <a href="https://vincentcottalorda.me" target="_blank" rel="noreferrer">
+              VINCENT
+            </a>
+          </div>
+          <div className="legal">
+            <Link to="/">MENTIONS LÉGALES</Link> - <Link to="/">PLAN DU SITE</Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;

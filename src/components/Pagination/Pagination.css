@@ -4,6 +4,14 @@
   align-items: center;
   margin: auto;
   height: auto;
+  font-family: bebas-neue-pro;
+  font-weight: var(--titleFont);
+}
+
+.Pagination > div:hover:not(.current),
+.Pagination > svg:hover {
+  background-color: var(--third);
+  transition: all 1s;
 }
 
 .Pagination div:not(:last-child),
@@ -28,6 +36,7 @@
 
 .current {
   background-color: var(--currentPage);
+  transition: all 1s;
 }
 
 .next,
@@ -35,6 +44,7 @@
 .total {
   cursor: pointer;
   background-color: var(--pagination);
+  transition: all 1s;
 }
 
 .next polyline,

@@ -26,7 +26,6 @@
   --success: #e9d1b1;
   --error: #ecc5d8;
   --info: #837f9b;
-
   --font: "helvetica", arial, sans-serif;
   --citeFont: "Homemade Apple", cursive;
   --titleFont: 300;
@@ -57,9 +56,15 @@ font-weight: 600; */
   scroll-behavior: smooth;
 }
 
+*::selection {
+  color: #ae7a93;
+  background-color: var(--secondary);
+}
+
 html,
 body {
   height: 100%;
+  cursor: url("./assets/images/cursor.png"), auto;
 }
 
 body {
@@ -213,21 +218,15 @@ cite::after {
 }
 
 q {
-  quotes: "“" "”" "‘" "’";
   color: var(--white);
-}
-
-q::before {
-  content: open-quote;
-}
-q::after {
-  content: close-quote;
 }
 
 h1 {
   color: var(--primary);
   font-size: 5vh;
-  font-family: var(--titleFont);
+  font-family: bebas-neue-pro;
+  font-weight: var(--titleFont);
+  text-transform: uppercase;
   font-weight: 100;
   line-height: 1;
 }
@@ -257,15 +256,24 @@ button {
   border-radius: 0.25rem;
   background: var(--secondary);
   color: #ae7a93;
-  font-family: var(--titleFont);
+  font-family: bebas-neue-pro;
+  font-weight: var(--titleFont);
   font-size: 2rem;
   font-weight: 100;
   line-height: 1.2;
   white-space: nowrap;
+  text-transform: uppercase;
   text-decoration: none;
-  padding: 0.25rem 0.5rem;
+  padding: 0.5vw 2vw;
   margin: 0.25rem;
   cursor: pointer;
+  transition: all 1s;
+}
+
+button:hover {
+  background: #ae7a93;
+  color: var(--white);
+  transition: all 1s;
 }
 
 hr {
@@ -320,6 +328,12 @@ hr {
   justify-content: center;
   align-items: center;
   padding: 3vh;
+}
+
+.has-text-align-center,
+center {
+  text-align: center;
+  color: var(--white);
 }
 
 .info {
