@@ -19,8 +19,9 @@ const ArticleSingle = () => {
   const [parent, setParent] = useState(0);
   const [answerTo, setAnswerTo] = useState("");
   const [post, setPost] = useState([]);
-  const [categoriesId, setCategoriesId] = useState();
-  const [categories, setCategories] = useState();
+  const [categoriesId, setCategoriesId] = useState([]);
+  const [category, setCategory] = useState([]);
+  const [categories, setCategories] = useState([]);
 
   const { handleFlash, flash, flashType } = useContext(uxContext);
 
@@ -34,9 +35,17 @@ const ArticleSingle = () => {
 
   useEffect(() => {
     if (categoriesId?.length !== 0) {
-      setCategories(categoriesId?.map((c) => findCategory(c).then((data) => data)));
+      categoriesId?.forEach((c) => findCategory(c).then((data) => setCategory(data)));
     }
   }, [categoriesId]);
+
+  useEffect(() => {
+    let all = [];
+    if (category.length !== 0) {
+      all.push(category);
+      setCategories(all);
+    }
+  }, [category]);
 
   const handleParent = (parentId, author) => {
     setParent(parentId);
@@ -69,7 +78,7 @@ const ArticleSingle = () => {
           <hr />
           <span className="date">Publié le : {dayjs(post?.date).format("DD/MM/YYYY")}</span>
           <div dangerouslySetInnerHTML={{ __html: post?.content.rendered }} className="content"></div>
-          <ArticleInfos article={post} tags={categories} />
+          <ArticleInfos tags={categories} />
           <ArticleComments post={id} comments={comments} setComments={setComments} handleParent={handleParent} />
           <Title text={<h2>Laisser un Commentaire</h2>} social={false} />
           {answerTo !== "" && <p>{answerTo}</p>}

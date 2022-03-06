@@ -4,7 +4,7 @@ import { AiFillTag } from "react-icons/ai";
 import { findPage } from "../../services/pagesAPI";
 import "./ArticleInfos.css";
 
-const ArticleInfos = () => {
+const ArticleInfos = ({ tags }) => {
   const [bio, setBio] = useState([]);
 
   useEffect(() => {
@@ -13,13 +13,6 @@ const ArticleInfos = () => {
     });
   }, []);
 
-  // useEffect(() => {
-  //   if (tags?.length !== 0) {
-  //     const all = tags?.map((t) => t.name);
-  //     setCat(all);
-  //   }
-  // }, [tags]);
-
   return (
     <div className="ArticleInfos infos">
       <div className="up">
@@ -27,13 +20,13 @@ const ArticleInfos = () => {
           <AiFillTag />
           <span>
             Tags:{" "}
-            {/* {cat?.length !== 0
-              ? cat?.map((c) => (
-                  <Link to="/" key={c.id}>
-                    {c.name}
-                  </Link>
+            {tags?.length !== 0
+              ? tags?.map((t) => (
+                  <a href="/#portfolio" key={t.id} className="tag">
+                    {t.name}
+                  </a>
                 ))
-              : "Aucun Tag"} */}
+              : "Aucun Tag"}
           </span>
         </div>
         <Socials />
