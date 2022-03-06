@@ -9,6 +9,16 @@ export const findAllPosts = (page, category) =>
     .then((data) => data)
     .catch((err) => "Désolé une erreur est survenue et nous ne pouvons pas retrouver les articles");
 
+export const latestPost = () =>
+  api
+    .posts()
+    .perPage(6)
+    .page(1)
+    .order("desc")
+    .orderby("date")
+    .then((data) => data)
+    .catch((err) => "Désolé une erreur est survenue et nous ne pouvons pas retrouver les articles");
+
 export const findPost = (id) =>
   api
     .posts()

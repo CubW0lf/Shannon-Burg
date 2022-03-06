@@ -46,7 +46,7 @@ function App() {
   useEffect(() => {
     findAllPosts(currentPage, categoryId).then((data) => {
       setPosts(data);
-      setPageCount(data._paging.totalPages);
+      setPageCount(data?._paging?.totalPages);
     });
   }, [currentPage, categoryId]);
 

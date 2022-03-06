@@ -7,8 +7,9 @@ import ArticleComments from "../../components/ArticleComments/ArticleComments";
 import ArticleInfos from "../../components/ArticleInfos/ArticleInfos";
 import Title from "../../components/Title/Title.jsx";
 import ArticlesLoader from "../../components/ArticlesLoader/ArticlesLoader.js";
-import "./ArticleSingle.css";
 import { findPost } from "../../services/articlesAPI.js";
+import { findCategory } from "../../services/categoriesAPI.js";
+import "./ArticleSingle.css";
 
 const ArticleSingle = () => {
   const { id } = useParams();
@@ -18,15 +19,24 @@ const ArticleSingle = () => {
   const [parent, setParent] = useState(0);
   const [answerTo, setAnswerTo] = useState("");
   const [post, setPost] = useState([]);
+  const [categoriesId, setCategoriesId] = useState();
+  const [categories, setCategories] = useState();
+
+  const { handleFlash, flash, flashType } = useContext(uxContext);
 
   useEffect(() => {
     findPost(id).then((data) => {
       setPost(data);
+      setCategoriesId(data.categories);
     });
     window.scrollTo(0, 0);
   }, [id]);
 
-  const { handleFlash, flash, flashType } = useContext(uxContext);
+  useEffect(() => {
+    if (categoriesId?.length !== 0) {
+      setCategories(categoriesId?.map((c) => findCategory(c).then((data) => data)));
+    }
+  }, [categoriesId]);
 
   const handleParent = (parentId, author) => {
     setParent(parentId);
@@ -55,11 +65,11 @@ const ArticleSingle = () => {
     <>
       {post.length !== 0 ? (
         <section className="ArticleSingle">
-          <span className="date">{dayjs(post?.date).format("DD/MM/YYYY")}</span>
-          <h1>{post?.title.rendered}</h1>
+          <h1 dangerouslySetInnerHTML={{ __html: post?.title.rendered }}></h1>
           <hr />
+          <span className="date">Publié le : {dayjs(post?.date).format("DD/MM/YYYY")}</span>
           <div dangerouslySetInnerHTML={{ __html: post?.content.rendered }} className="content"></div>
-          <ArticleInfos article={post} />
+          <ArticleInfos article={post} tags={categories} />
           <ArticleComments post={id} comments={comments} setComments={setComments} handleParent={handleParent} />
           <Title text={<h2>Laisser un Commentaire</h2>} social={false} />
           {answerTo !== "" && <p>{answerTo}</p>}

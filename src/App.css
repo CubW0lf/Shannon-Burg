@@ -365,6 +365,44 @@ hr {
   height: 100%;
 }
 
+/* Classes Bootstrapé pour wordpress et pour simplifier */
+
+.text-book {
+  font-family: bebas-neue-pro;
+  font-weight: var(--titleFont);
+  text-transform: uppercase;
+}
+
+.text-regular {
+  font-family: bebas-neue-pro;
+  font-weight: var(--sliderFont);
+}
+
+.text-bold {
+  font-family: bebas-neue-pro;
+  font-weight: var(--homeFont);
+}
+
+.text-hand {
+  font-family: var(--citeFont);
+}
+
+.primary-color {
+  color: var(--primary);
+}
+
+.primary-bg {
+  background-color: var(--primary);
+}
+
+.secondary-color {
+  color: var(--secondary);
+}
+
+.secondary-bg {
+  background-color: var(--secondary);
+}
+
 @media screen and (min-width: 1200px) {
   h1 {
     font-size: 7rem;

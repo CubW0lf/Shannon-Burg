@@ -97,11 +97,11 @@
   align-items: center;
   color: var(--secondary);
   z-index: 3;
-  font-family: var(--titleFont);
-  font-size: 1.3em;
-  transform: translate(-50%, -12vh) rotate(-6deg);
+  font-size: 2.7vh;
+  transform: translate(-50%, -16vh) rotate(-6deg);
+  transform-origin: center;
   background-color: var(--body);
-  padding: 0.5rem 1rem 0 1rem;
+  padding: 0.25rem 1rem 0 1rem;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   text-align: center;
@@ -145,6 +145,6 @@
   .Home .portfolio-link {
     left: 50%;
     font-size: 2rem;
-    transform: translate(-50%, -25vh) rotate(-3deg);
+    transform: translate(-50%, -24vh) rotate(-3deg);
   }
 }

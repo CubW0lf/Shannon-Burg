@@ -1,33 +1,56 @@
+import { useState, useEffect } from "react";
 import Socials from "../../components/Socials/Socials";
 import { AiFillTag } from "react-icons/ai";
+import { findPage } from "../../services/pagesAPI";
 import "./ArticleInfos.css";
 
-const ArticleInfos = ({ article }) => {
-    return (
-        <div className="ArticleInfos infos">
-            <div className="up">
-                <div className="tags">
-                    <AiFillTag />
-                    <span>Tags: {article.tags.length !== 0 ? article.tags.map((t) => t) : "Aucun Tag"}</span>
-                </div>
-                <Socials />
-            </div>
-            <div className="author">
-                <div className="thumbnail"></div>
-                <div className="text">
-                    <h3>Shannon Burg</h3>
-                    <span>
-                        Maquettiste, passionnée d'illustration, de dessin, de photomontages, de loisirs créatifs mais
-                        également de multimédia, aimant la décoration et tout ce qui touche au domaine créatif.
-                    </span>
-                    <div>
-                        <span>Retrouve-moi sur les réseaux sociaux :</span>
-                        <Socials />
-                    </div>
-                </div>
-            </div>
+const ArticleInfos = () => {
+  const [bio, setBio] = useState([]);
+
+  useEffect(() => {
+    findPage(304).then((data) => {
+      setBio(data);
+    });
+  }, []);
+
+  // useEffect(() => {
+  //   if (tags?.length !== 0) {
+  //     const all = tags?.map((t) => t.name);
+  //     setCat(all);
+  //   }
+  // }, [tags]);
+
+  return (
+    <div className="ArticleInfos infos">
+      <div className="up">
+        <div className="tags">
+          <AiFillTag />
+          <span>
+            Tags:{" "}
+            {/* {cat?.length !== 0
+              ? cat?.map((c) => (
+                  <Link to="/" key={c.id}>
+                    {c.name}
+                  </Link>
+                ))
+              : "Aucun Tag"} */}
+          </span>
         </div>
-    );
+        <Socials />
+      </div>
+      <div className="author">
+        <div className="thumbnail" style={{ backgroundImage: `url(${bio.length !== 0 && bio.fimg_url})` }}></div>
+        <div className="text">
+          <h3>Shannon Burg</h3>
+          {bio.length !== 0 && <span dangerouslySetInnerHTML={{ __html: bio?.content.rendered }}></span>}
+          <div>
+            <span>Retrouve-moi sur les réseaux sociaux :</span>
+            <Socials />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default ArticleInfos;
