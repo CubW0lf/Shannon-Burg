@@ -65,7 +65,7 @@ const Contact = () => {
         </form>
       </div>
       <aside>
-        <img src={shannon} alt="Moi" />
+        <img src={shannon} alt="Moi" title="Photo de Vincent Cottalorda" />
       </aside>
       {flash !== "" ? <div className={`flash ${flashType !== "" ? flashType : ""}`}>{flash}</div> : ""}
     </section>

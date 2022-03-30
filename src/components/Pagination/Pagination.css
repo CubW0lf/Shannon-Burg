@@ -19,8 +19,8 @@
   margin-right: 0.5vw;
 }
 
-.next,
-.prev,
+.Pagination .next,
+.Pagination .prev,
 .current,
 .total {
   width: 3rem;
@@ -39,21 +39,21 @@
   transition: all 1s;
 }
 
-.next,
-.prev,
+.Pagination .next,
+.Pagination .prev,
 .total {
   cursor: pointer;
   background-color: var(--pagination);
   transition: all 1s;
 }
 
-.next polyline,
-.prev polyline {
+.Pagination .next polyline,
+.Pagination .prev polyline {
   stroke: var(--white);
 }
 
-.next,
-.prev {
+.Pagination .next,
+.Pagination .prev {
   padding: 0.7rem;
 }
 

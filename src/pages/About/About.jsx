@@ -18,7 +18,7 @@ const About = () => {
       {about.length !== 0 ? (
         <>
           <div className="shannon">
-            <img src={Shannon} className="shannon-image" alt="moi" />
+            <img src={Shannon} className="shannon-image" alt="moi" title="Photo de Vincent Cottalorda" />
           </div>
           <div className="text">
             <Title

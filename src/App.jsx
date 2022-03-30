@@ -8,8 +8,8 @@ import Footer from "./components/Footer/Footer";
 import ArticleSingle from "./pages/ArticleSingle/ArticleSingle";
 import Home from "./pages/Home/Home";
 import SearchResult from "./pages/SearchResult/SearchResult.jsx";
-import "./App.css";
 import ScrollTop from "./components/ScrollTop/ScrollTop.jsx";
+import "./App.css";
 
 function App() {
   const [categoryId, setCategoryId] = useState(null);
