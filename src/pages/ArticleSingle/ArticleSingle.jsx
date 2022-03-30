@@ -25,6 +25,7 @@ const ArticleSingle = () => {
   const [categoriesId, setCategoriesId] = useState([]);
   const [category, setCategory] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [scroll, setScroll] = useState(false);
 
   const { handleFlash, flash, flashType } = useContext(uxContext);
 
@@ -50,6 +51,18 @@ const ArticleSingle = () => {
     }
   }, [category]);
 
+  window.addEventListener("scroll", (e) => {
+    setScroll(true);
+  });
+
+  useEffect(() => {
+    if (scroll === true) {
+      setTimeout(() => {
+        setScroll(false);
+      }, 3000);
+    }
+  }, [scroll]);
+
   const handleParent = (parentId, author) => {
     setParent(parentId);
     setAnswerTo(`Vous répondez à : ${author}`);
@@ -73,27 +86,27 @@ const ArticleSingle = () => {
       handleFlash("error", "Une erreur est survenue", 3000);
     }
   };
+
   return (
     <>
       {post.length !== 0 ? (
         <section className="ArticleSingle">
           <Categories />
-          <div style={{ backgroundImage: `url(${post.fimg_url})` }} alt="" className="fimg">
-            {post.previous && (
-              <Link to={`/article/${post.previous.id}`}>
-                <div className="prev">
-                  <BsChevronLeft />
-                </div>
-              </Link>
-            )}
-            {post.next && (
-              <Link to={`/article/${post.next.id}`}>
-                <div className="next">
-                  <BsChevronRight />
-                </div>
-              </Link>
-            )}
-          </div>
+          {post.previous && (
+            <Link to={`/article/${post.previous.id}`}>
+              <div className={`prev ${scroll ? "" : "active"}`}>
+                <BsChevronLeft />
+              </div>
+            </Link>
+          )}
+          {post.next && (
+            <Link to={`/article/${post.next.id}`}>
+              <div className={`next ${scroll ? "" : "active"}`}>
+                <BsChevronRight />
+              </div>
+            </Link>
+          )}
+          <div style={{ backgroundImage: `url(${post.fimg_url})` }} alt="" className="fimg"></div>
           <div className="content">
             <h1 dangerouslySetInnerHTML={{ __html: post?.title.rendered }}></h1>
             <hr />

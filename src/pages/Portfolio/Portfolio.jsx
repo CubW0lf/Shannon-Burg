@@ -10,7 +10,6 @@ const Portfolio = () => {
       <Slider />
       <Categories />
       <Articles />
-      <Pagination />
     </section>
   );
 };

@@ -36,6 +36,10 @@
   line-height: 1.2;
 }
 
+.Article .date {
+  display: none;
+}
+
 .Article .date p {
   color: var(--white);
   z-index: 3;
@@ -70,6 +74,7 @@
     color: var(--white);
     z-index: 3;
     position: relative;
+    display: block;
   }
 }
 

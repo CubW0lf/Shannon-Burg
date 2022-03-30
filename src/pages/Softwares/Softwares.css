@@ -39,10 +39,10 @@
   width: 100%;
   background-image: url("../../assets/images/softwares-bg.jpg");
   background-size: cover;
-  background-attachment: fixed;
   background-position: bottom center;
   height: 50vh;
   padding: 5vw;
+  position: relative;
 }
 
 .Softwares .citation span {
@@ -76,13 +76,14 @@
 }
 
 .Softwares .mouse {
-  height: 3rem;
-  width: 1rem;
+  height: 17vw;
+  width: 10vw;
   border: 2px solid var(--white);
   border-radius: 70px 70px 70px 70px;
-  position: relative;
   opacity: 0.9;
   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   animation: 1s ease-in-out alternate infinite mouse-down;
   animation-delay: 0.5s;
 }
@@ -120,6 +121,7 @@
 
   .Softwares .citation {
     margin-top: 5vh;
+    background-attachment: fixed;
   }
 
   .Softwares .citation span {
@@ -127,8 +129,8 @@
   }
 
   .Softwares .mouse {
-    height: 6rem;
-    width: 3rem;
+    height: 6.5rem;
+    width: 4rem;
   }
 
   .Softwares .mouse .scroll {
@@ -147,9 +149,9 @@
 
 @keyframes mouse-down {
   from {
-    transform: translate(0, 50%);
+    transform: translate(-50%, 30%);
   }
   to {
-    transform: translate(0, 60%);
+    transform: translate(-50%, 40%);
   }
 }

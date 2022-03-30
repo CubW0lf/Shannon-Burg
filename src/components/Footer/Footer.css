@@ -1,7 +1,6 @@
 .Footer {
   background: url("../../assets/images/footer.jpg");
   background-size: cover;
-  background-attachment: fixed;
   height: 50vh;
   clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
   position: absolute;
@@ -56,6 +55,7 @@
   .Footer {
     height: 80vh;
     clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+    background-attachment: fixed;
   }
 
   .Footer .content .quote {

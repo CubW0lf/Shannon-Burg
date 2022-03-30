@@ -6,6 +6,10 @@
   height: auto;
   font-family: bebas-neue-pro;
   font-weight: var(--titleFont);
+  position: absolute;
+  bottom: 2.5vh;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .Pagination > div:hover:not(.current),

@@ -4,6 +4,7 @@ import ArticlesLoader from "../../components/ArticlesLoader/ArticlesLoader";
 import { useContext } from "react";
 import { PostContext } from "../../contexts/PostContext.js";
 import "./Articles.css";
+import Pagination from "../Pagination/Pagination";
 
 const Articles = () => {
   const { posts, error, isLoading } = useContext(PostContext);
@@ -20,6 +21,7 @@ const Articles = () => {
               <ArticleCard data={p} />
             </Link>
           ))}
+        <Pagination />
       </div>
     </>
   );
