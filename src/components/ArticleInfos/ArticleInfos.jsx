@@ -3,9 +3,8 @@ import Socials from "../../components/Socials/Socials";
 import { AiFillTag } from "react-icons/ai";
 import { findPage } from "../../services/pagesAPI";
 import "./ArticleInfos.css";
-import ShareToNetwork from "../ShareToNetwork/ShareToNetwork";
 
-const ArticleInfos = ({ tags, id }) => {
+const ArticleInfos = ({ tags }) => {
   const [bio, setBio] = useState([]);
 
   useEffect(() => {
@@ -24,16 +23,15 @@ const ArticleInfos = ({ tags, id }) => {
             {tags?.length !== 0
               ? tags?.map((t) => (
                   <a href="/#portfolio" key={t.id} className="tag">
-                    {t.name}
+                    {t.name.replace("&amp;", "&")}
                   </a>
                 ))
               : "Aucun Tag"}
           </span>
         </div>
-        <ShareToNetwork id={id} />
       </div>
       <div className="author">
-        <div className="thumbnail" style={{ backgroundImage: `url(${bio.length !== 0 && bio.fimg_url})` }}></div>
+        {bio.length !== 0 && <img src={bio.fimg_url} alt="" className="thumbnail" />}
         <div className="text">
           <h3>Shannon Burg</h3>
           {bio.length !== 0 && <span dangerouslySetInnerHTML={{ __html: bio?.content.rendered }}></span>}

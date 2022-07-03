@@ -33,7 +33,7 @@ const About = () => {
             />
             <div className="content-container">
               <p dangerouslySetInnerHTML={{ __html: about?.content.rendered }}></p>
-              <button>Télécharger mon CV</button>
+              {/* <button>Télécharger mon CV</button> */}
             </div>
           </div>
         </>

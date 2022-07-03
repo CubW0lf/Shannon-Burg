@@ -64,7 +64,7 @@
     cursor: pointer;
     height: 7vh;
     width: 7vh;
-    padding: 1.5vh;
+    padding: 2vh;
     background-color: var(--secondary);
     color: #ae7a93;
   }

@@ -2,8 +2,15 @@
   text-transform: uppercase;
 }
 
+.tags svg {
+  margin-right: 0.5vw;
+}
+
 .tag {
-  margin-right: 1vw;
+  margin-right: 0.5vw;
+  background-color: var(--third);
+  padding: 0.5vh 0.5vw;
+  border-radius: 2px;
 }
 
 .text h3 {

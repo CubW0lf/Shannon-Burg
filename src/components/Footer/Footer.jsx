@@ -1,5 +1,3 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import "./Footer.css";
 
 const Footer = () => {
@@ -19,9 +17,6 @@ const Footer = () => {
             <a href="https://vincentcottalorda.me" target="_blank" rel="noreferrer">
               VINCENT
             </a>
-          </div>
-          <div className="legal">
-            <Link to="/">MENTIONS LÉGALES</Link> - <Link to="/">PLAN DU SITE</Link>
           </div>
         </div>
       </div>

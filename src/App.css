@@ -26,8 +26,10 @@
   --success: #e9d1b1;
   --error: #ecc5d8;
   --info: #837f9b;
+  --button: #ae7a93;
   --font: "helvetica", arial, sans-serif;
   --citeFont: "Homemade Apple", cursive;
+  --bebas: "bebas-neue-pro";
   --titleFont: 300;
   --sliderFont: 400;
   --homeFont: 600;
@@ -72,6 +74,7 @@ body {
   -webkit-font-smoothing: antialiased;
   font-family: var(--font);
   background-color: var(--body);
+  width: 100%;
 }
 
 img,
@@ -255,7 +258,7 @@ button {
   border: 0;
   border-radius: 0.25rem;
   background: var(--secondary);
-  color: #ae7a93;
+  color: var(--button);
   font-family: bebas-neue-pro;
   font-weight: var(--titleFont);
   font-size: 2rem;
@@ -271,7 +274,7 @@ button {
 }
 
 button:hover {
-  background: #ae7a93;
+  background: var(--button);
   color: var(--white);
   transition: all 1s;
 }
@@ -300,7 +303,7 @@ hr {
 
 .error {
   background-color: var(--error);
-  color: #ae7a93 !important;
+  color: var(--button) !important;
 }
 
 .flash {

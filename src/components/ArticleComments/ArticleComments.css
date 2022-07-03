@@ -1,28 +1,94 @@
 .ArticleComments.commentaires .infos .date {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.5);
-    margin-left: 1vw;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-left: 1vw;
 }
 
 .ArticleComments .answer {
-    cursor: pointer;
+  cursor: pointer;
+  padding: 0.5vh 0.5vw;
+  background-color: var(--secondary);
+  color: var(--button);
+  border-radius: 1px;
 }
 
 .ArticleComments .infos {
-    width: 100%;
+  width: 100%;
 }
 
 .ArticleComments .comment_author {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 0.8;
 }
 
 .ArticleComments .auteur {
-    font-size: 1rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    margin-left: 1vw;
-    background-color: var(--bodyLight);
-    border-radius: 5px;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-left: 1vw;
+  background-color: var(--bodyLight);
+  border-radius: 5px;
+}
+
+.ArticleSingle .comment {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bodyLight);
+}
+
+.ArticleSingle .comment .thumbnail {
+  display: none;
+}
+
+.ArticleSingle .comment .infos {
+  padding-left: 0;
+}
+
+.ArticleSingle .comment .infos .comment_author {
+  font-size: 2rem;
+}
+
+.ArticleSingle .comment .infos .text {
+  opacity: 0.8;
+  margin: 2vh 0 2vh 0;
+}
+
+.ArticleSingle .comment .infos .text p {
+  font-size: 2.2vh;
+}
+
+.ArticleSingle .answers {
+  margin-left: 1rem;
+}
+
+.ArticleSingle .comment-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 1200px) {
+  .ArticleSingle .answers {
+    margin-left: 2rem;
+  }
+
+  .ArticleSingle .comment .thumbnail {
+    display: block;
+  }
+
+  .ArticleSingle .comment .infos {
+    padding-left: 1rem;
+  }
+
+  .ArticleSingle .comment .infos .text p {
+    font-size: 1.7vh;
+  }
 }

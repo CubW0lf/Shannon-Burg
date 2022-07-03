@@ -16,13 +16,13 @@ const Home = () => {
             <span>Je Suis </span>{" "}
             <Typewriter
               options={{
-                strings: ["WEB DESIGNER ", "GRAPHIC DESIGNER ", "ILLUSTRATRICE ", "MAGICIENNE :) ", "RETOUCHEUSE PHOTO "],
+                strings: ["WEB DESIGNER ", "GRAPHIC DESIGNER ", "ILLUSTRATRICE ", "RETOUCHEUSE PHOTO ", "MAGICIENNE :) "],
                 autoStart: true,
                 loop: true,
               }}
             />
           </h2>
-          <q className="not-mobile">Fais de ta vie un rêve, et d'un rêve une réalité</q>
+          <span className="not-mobile quote">&laquo; Fais de ta vie un rêve, et d'un rêve une réalité &raquo;</span>
           <cite className="not-mobile">Antoine de Saint Exupéry</cite>
         </div>
         <div className="shannon"></div>

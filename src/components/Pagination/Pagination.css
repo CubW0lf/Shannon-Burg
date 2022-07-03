@@ -7,7 +7,7 @@
   font-family: bebas-neue-pro;
   font-weight: var(--titleFont);
   position: absolute;
-  bottom: 2.5vh;
+  bottom: 7vh;
   left: 50%;
   transform: translateX(-50%);
 }

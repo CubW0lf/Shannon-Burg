@@ -13,7 +13,7 @@ const Articles = () => {
     <>
       {isLoading && <ArticlesLoader />}
       <div className="Articles">
-        {error && <>Oh no, there was an error</>}
+        {error && <>Oups une erreur est survenue</>}
         {!error &&
           !isLoading &&
           posts?.map((p) => (

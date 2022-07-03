@@ -46,10 +46,18 @@
   text-transform: uppercase;
 }
 
-.Home .citations q {
+.Home .citations h2 span {
+  line-height: 0.7;
+  margin-bottom: 2vh;
+}
+
+.Home .citations .quote {
   text-transform: uppercase;
   font-weight: 300;
   font-size: 1rem;
+  line-height: 1;
+  margin-top: 4vh;
+  color: var(--white);
 }
 
 .Home .citations cite {
@@ -64,13 +72,13 @@
   font-weight: var(--homeFont);
   text-transform: uppercase;
   font-size: 7vw;
-  line-height: 0.5;
-  margin-bottom: 2.5vh;
+  line-height: 0.7;
+  margin-bottom: 2vh;
 }
 
 .Home .Typewriter {
   font-family: var(--titleFont);
-  line-height: 100%;
+  line-height: 0.5;
   font-size: 0.6em;
   width: 100%;
   color: var(--primary);
@@ -122,12 +130,12 @@
 
   .Home .citations {
     position: absolute;
-    width: 70vw;
+    width: 45vw;
     top: 20vh;
     left: 5vw;
   }
 
-  .Home .citations q,
+  .Home .citations .quote,
   .Home .citations cite {
     font-size: 1.5rem;
   }
@@ -135,7 +143,7 @@
   .Home .shannon {
     height: 100vh;
     width: 60vw;
-    background-position: bottom 25vh right -5vw;
+    background-position: bottom 25vh right -7vw;
     position: absolute;
     right: 0;
     top: 0;

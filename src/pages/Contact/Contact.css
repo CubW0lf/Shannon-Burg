@@ -27,9 +27,9 @@
 
 .Contact aside {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  width: 90%;
+  width: 100%;
 }
 
 .Contact aside img {

@@ -10,6 +10,7 @@ import Home from "./pages/Home/Home";
 import SearchResult from "./pages/SearchResult/SearchResult.jsx";
 import ScrollTop from "./components/ScrollTop/ScrollTop.jsx";
 import "./App.css";
+import NotFound from "./pages/NotFound/NotFound.jsx";
 
 function App() {
   const [categoryId, setCategoryId] = useState(null);
@@ -85,6 +86,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/search" element={<SearchResult />} />
             <Route path="/article/:id" element={<ArticleSingle />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
         </div>

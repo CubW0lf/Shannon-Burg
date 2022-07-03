@@ -23,7 +23,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 1rem;
-    padding: 5vh 10vh 10vh 10vh;
+    padding: 5vh 10vh 15vh 10vh;
   }
 
   .Articles a {

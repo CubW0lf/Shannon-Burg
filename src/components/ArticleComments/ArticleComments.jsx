@@ -3,7 +3,7 @@ import "./ArticleComments.css";
 import { useFindAllByPostQuery } from "../../services/wordpress";
 import ArticlesLoader from "../ArticlesLoader/ArticlesLoader";
 
-const ArticleComments = ({ post, handleParent }) => {
+const ArticleComments = ({ post, handleParent, handlePostComment }) => {
   const { data: comments, isLoading, isSuccess, error } = useFindAllByPostQuery(post);
 
   const orderedComments = [];
@@ -33,7 +33,7 @@ const ArticleComments = ({ post, handleParent }) => {
                 <div className="comment_author">
                   <span>
                     {p.parent.author_name}
-                    {p.parent.author === 1 && <span className="auteur">Auteur</span>}
+                    {p.parent.author_url === "http://shannonburg.fr" && <span className="auteur">Auteur</span>}
                   </span>
                   <span className="date">{dayjs(p.parent.date).format("DD/MM/YYYY hh:mm")}</span>
                 </div>

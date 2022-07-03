@@ -12,56 +12,43 @@ import { findPost } from "../../services/articlesAPI.js";
 import { findCategory } from "../../services/categoriesAPI.js";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { useInView } from "react-intersection-observer";
 import "./ArticleSingle.css";
 
 const ArticleSingle = () => {
   const { id } = useParams();
   const [pseudo, setPseudo] = useState("");
   const [message, setMessage] = useState("");
+  const [email, setEmail] = useState("");
   const [comments, setComments] = useState([]);
   const [parent, setParent] = useState(0);
   const [answerTo, setAnswerTo] = useState("");
   const [post, setPost] = useState([]);
   const [categoriesId, setCategoriesId] = useState([]);
-  const [category, setCategory] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [scroll, setScroll] = useState(false);
 
   const { handleFlash, flash, flashType } = useContext(uxContext);
+
+  const { ref, inView, entry } = useInView();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     findPost(id).then((data) => {
       setPost(data);
       setCategoriesId(data.categories);
     });
-    window.scrollTo(0, 0);
   }, [id]);
 
   useEffect(() => {
-    if (categoriesId?.length !== 0) {
-      categoriesId?.forEach((c) => findCategory(c).then((data) => setCategory(data)));
-    }
-  }, [categoriesId]);
-
-  useEffect(() => {
     let all = [];
-    if (category.length !== 0) {
-      all.push(category);
+    if (categoriesId?.length !== 0) {
+      categoriesId?.forEach((c) => findCategory(c).then((data) => all.push(data)));
       setCategories(all);
     }
-  }, [category]);
-
-  window.addEventListener("scroll", (e) => {
-    setScroll(true);
-  });
-
-  useEffect(() => {
-    if (scroll === true) {
-      setTimeout(() => {
-        setScroll(false);
-      }, 3000);
-    }
-  }, [scroll]);
+  }, [categoriesId]);
 
   const handleParent = (parentId, author) => {
     setParent(parentId);
@@ -71,20 +58,18 @@ const ArticleSingle = () => {
 
   const handlePostComment = async (e) => {
     e.preventDefault();
-    const setComment = await axios.post(
-      `https://wp.shannonburg.fr/wp-json/wp/v2/comments?author_name=${pseudo}&content=${message}&post=${id}&parent=${parent}`
-    );
 
-    if (setComment) {
-      handleFlash("success", "Votre commentaire à bien été envoyé", 3000);
-      setPseudo("");
-      setMessage("");
-      axios.get(`https://wp.shannonburg.fr/wp-json/wp/v2/comments?post=${id}`).then(({ data }) => {
-        setComments(data);
-      });
-    } else {
-      handleFlash("error", "Une erreur est survenue", 3000);
-    }
+    await axios
+      .post(
+        `https://wp.shannonburg.fr/wp-json/wp/v2/comments?author_name=${pseudo}&content=${message}&post=${id}&parent=${parent}&author_email=${email}`
+      )
+      .then((response) => {
+        handleFlash("success", "Votre commentaire à bien été envoyé", 3000);
+        setPseudo("");
+        setMessage("");
+        setEmail("");
+      })
+      .catch((err) => handleFlash("error", err.message, 3000));
   };
 
   return (
@@ -94,19 +79,19 @@ const ArticleSingle = () => {
           <Categories />
           {post.previous && (
             <Link to={`/article/${post.previous.id}`}>
-              <div className={`prev ${scroll ? "" : "active"}`}>
+              <div className={`prev ${inView ? "" : "active"}`}>
                 <BsChevronLeft />
               </div>
             </Link>
           )}
           {post.next && (
             <Link to={`/article/${post.next.id}`}>
-              <div className={`next ${scroll ? "" : "active"}`}>
+              <div className={`next ${inView ? "" : "active"}`}>
                 <BsChevronRight />
               </div>
             </Link>
           )}
-          <div style={{ backgroundImage: `url(${post.fimg_url})` }} alt="" className="fimg"></div>
+          <div style={{ backgroundImage: `url(${post.fimg_url})` }} alt="" className="fimg" ref={ref}></div>
           <div className="content">
             <h1 dangerouslySetInnerHTML={{ __html: post?.title.rendered }}></h1>
             <hr />
@@ -114,24 +99,29 @@ const ArticleSingle = () => {
             <div dangerouslySetInnerHTML={{ __html: post?.content.rendered }} className="text"></div>
 
             <ArticleInfos tags={categories} id={id} />
-            <ArticleComments post={id} comments={comments} setComments={setComments} handleParent={handleParent} />
+            <ArticleComments
+              post={id}
+              comments={comments}
+              setComments={setComments}
+              handleParent={handleParent}
+              handlePostComment={handlePostComment}
+            />
             <Title text={<h2>Laisser un Commentaire</h2>} social={false} />
             {answerTo !== "" && <p>{answerTo}</p>}
             <form className="comment-form" onSubmit={handlePostComment}>
+              <input type="text" placeholder="Votre Pseudo *" value={pseudo} onChange={(e) => setPseudo(e.target.value)} />
               <input
-                type="text"
-                name=""
-                id=""
-                placeholder="Votre Pseudo"
-                value={pseudo}
-                onChange={(e) => setPseudo(e.target.value)}
+                type="email"
+                name="email"
+                id="email"
+                placeholder="email pour Gravatar"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
               <textarea
-                name=""
-                id=""
                 cols="30"
                 rows="10"
-                placeholder="Votre message"
+                placeholder="Votre message *"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               ></textarea>

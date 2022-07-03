@@ -6,7 +6,7 @@
   color: var(--white);
   width: 100%;
   position: fixed;
-  z-index: 6;
+  z-index: 8;
   background: var(--author);
   height: 10vh;
   filter: drop-shadow(0 0 2px black);
@@ -95,6 +95,8 @@
 .menu ul a li {
   width: 100%;
   font-size: 1.8rem;
+  font-family: var(--bebas);
+  font-weight: 100;
   height: 10vh;
   color: var(--primary);
   display: flex;
@@ -149,5 +151,12 @@
     height: 6vh;
     margin-left: 1vw;
     margin-right: 1vw;
+    transition: transform 0.4s;
+    transform: scale(1);
+  }
+
+  .Navbar .logo:hover {
+    transform: scale(1.2);
+    transition: transform 0.4s;
   }
 }
