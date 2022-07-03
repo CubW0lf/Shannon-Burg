@@ -29,7 +29,7 @@ const ArticleSingle = () => {
 
   const { handleFlash, flash, flashType } = useContext(uxContext);
 
-  const { ref, inView, entry } = useInView();
+  const { ref, inView } = useInView();
 
   useEffect(() => {
     window.scrollTo(0, 0);
