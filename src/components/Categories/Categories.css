@@ -93,10 +93,11 @@
   }
 
   .Categories .parent {
-    width: 14vw;
+    width: auto;
     height: 100%;
     margin-bottom: 0;
     font-size: 2vw;
+    padding-right: 5vw;
   }
 
   .Categories .parent .sub {

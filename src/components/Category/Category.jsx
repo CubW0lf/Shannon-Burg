@@ -11,7 +11,10 @@ const Category = ({ category }) => {
     setCurrentPage(1);
     setToggleSub(!toggleSub);
     setCategoryId(id);
-    if (window.location.href !== `${window.location.origin}/#portfolio`) {
+    if (
+      window.location.href !== `${window.location.origin}/#portfolio` &&
+      window.location.href !== `${window.location.origin}/`
+    ) {
       window.location.href = "/#portfolio";
     }
   };
