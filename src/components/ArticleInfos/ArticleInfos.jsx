@@ -18,8 +18,8 @@ const ArticleInfos = ({ tags }) => {
       <div className="up">
         <div className="tags">
           <AiFillTag />
+          <span>Tags:</span>
           <span>
-            Tags:{" "}
             {tags?.length !== 0
               ? tags?.map((t) => (
                   <a href="/#portfolio" key={t.id} className="tag">

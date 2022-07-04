@@ -109,19 +109,19 @@ const ArticleSingle = () => {
             <Title text={<h2>Laisser un Commentaire</h2>} social={false} />
             {answerTo !== "" && <p>{answerTo}</p>}
             <form className="comment-form" onSubmit={handlePostComment}>
-              <input type="text" placeholder="Votre Pseudo *" value={pseudo} onChange={(e) => setPseudo(e.target.value)} />
+              <input type="text" placeholder="Ton pseudo *" value={pseudo} onChange={(e) => setPseudo(e.target.value)} />
               <input
                 type="email"
                 name="email"
                 id="email"
-                placeholder="email pour Gravatar"
+                placeholder="Ton email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
               <textarea
                 cols="30"
                 rows="10"
-                placeholder="Votre message *"
+                placeholder="Ton message *"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               ></textarea>

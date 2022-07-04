@@ -11,7 +11,9 @@ const Category = ({ category }) => {
     setCurrentPage(1);
     setToggleSub(!toggleSub);
     setCategoryId(id);
-    window.location.href = "/#portfolio";
+    if (window.location.href !== `${window.location.origin}/#portfolio`) {
+      window.location.href = "/#portfolio";
+    }
   };
 
   return (

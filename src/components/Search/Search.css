@@ -1,7 +1,7 @@
 @media screen and (min-width: 1200px) {
   .Search {
     position: absolute;
-    right: calc(-21vw - 5vh);
+    right: calc(-20vw - 7vh);
     display: flex;
     justify-content: flex-end;
     align-items: center;
