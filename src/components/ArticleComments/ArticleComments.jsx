@@ -53,7 +53,10 @@ const ArticleComments = ({ post, handleParent, handlePostComment }) => {
                     </div>
                     <div className="infos">
                       <div className="comment_author">
-                        {s.author_name}
+                        <span className="author_name">
+                          {s.author_name}
+                          {s.author_url === "http://shannonburg.fr" && <span className="auteur">Auteur</span>}
+                        </span>
                         <span className="date">{dayjs(s.date).format("DD/MM/YYYY hh:mm")}</span>
                       </div>
                       <div className="text" dangerouslySetInnerHTML={{ __html: s.content.rendered }}></div>

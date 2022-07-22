@@ -21,15 +21,23 @@
   justify-content: space-between;
   align-items: center;
   line-height: 0.8;
+  position: relative;
+}
+
+.ArticleComments .author_name {
+  position: relative;
 }
 
 .ArticleComments .auteur {
-  font-size: 1rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  margin-left: 1vw;
+  font-size: .7rem;
+  padding: 5px 0.5rem;
   background-color: var(--bodyLight);
   border-radius: 5px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(120%, -50%);
+  text-transform: uppercase;
 }
 
 .ArticleSingle .comment {
