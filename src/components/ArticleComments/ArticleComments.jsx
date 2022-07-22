@@ -20,7 +20,8 @@ const ArticleComments = ({ post, handleParent, handlePostComment }) => {
     <div className="ArticleComments commentaires">
       {error && <>Oh no, there was an error</>}
       {isLoading && <ArticlesLoader />}
-      {isSuccess && comments.length !== 0 && <p className="counter">{comments.length} ptits mots déposés. Merci</p>}
+      {isSuccess && comments.length === 1 && <p className="counter">{comments.length} ptit mot déposé. Merci</p>}
+      {isSuccess && comments.length > 1 && <p className="counter">{comments.length} ptits mots déposés. Merci</p>}
       {isSuccess &&
         comments.length !== 0 &&
         orderedComments.map((p) => (
