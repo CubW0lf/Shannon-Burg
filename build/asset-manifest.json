@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e8b1323d.css",
+    "main.js": "/static/js/main.e3d8ae4f.js",
+    "static/media/shannon.png": "/static/media/shannon.6181cfd04473b9a02502.png",
+    "static/media/home.jpg": "/static/media/home.d89d636d93a69c60856b.jpg",
+    "static/media/skill-bg-repeat.jpg": "/static/media/skill-bg-repeat.cf04d9bbe1716923176c.jpg",
+    "static/media/footer.jpg": "/static/media/footer.f500c713e607066d9e25.jpg",
+    "static/media/shannon_contact.png": "/static/media/shannon_contact.5b7d776d87b809712cc8.png",
+    "static/media/shannon_about.png": "/static/media/shannon_about.7370004e3a2b1487c404.png",
+    "static/media/softwares-bg.jpg": "/static/media/softwares-bg.b1b40c2257569cffe1b4.jpg",
+    "index.html": "/index.html",
+    "main.e8b1323d.css.map": "/static/css/main.e8b1323d.css.map",
+    "main.e3d8ae4f.js.map": "/static/js/main.e3d8ae4f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e8b1323d.css",
+    "static/js/main.e3d8ae4f.js"
+  ]
+}
